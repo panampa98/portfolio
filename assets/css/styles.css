@@ -2,23 +2,26 @@
   --primary-color: #2f76e0;
   --background-color: #1e1e1e;
   --text-color: #ffffff;
+  --card-surface: rgba(20, 24, 35, 0.92);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-glow: rgba(47, 118, 224, 0.25);
+  --card-font: 'Manrope', sans-serif;
 }
 
-/* Fondo oscuro global */
 html, body {
-  height: 100%;  /* Asegura que cubra toda la pantalla */
-  margin: 0;     /* Elimina el margen por defecto */
-  padding: 0;    /* Elimina el padding por defecto */
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #1e1e1e; /* Fondo oscuro */
+  background-color: #1e1e1e;
   color: var(--text-color);
   font-family: 'Poppins', sans-serif;
 }
 
 h1, h2, h3, p {
-  color: #fff; /* Aseguramos que los títulos y párrafos también sean blancos */
+  color: #fff;
 }
 
 .container {
@@ -56,66 +59,330 @@ header {
 }
 
 .language-button.active-language {
-  background-color: #007BFF !important;
+  background-color: #007bff !important;
   color: white !important;
-  border-color: #007BFF !important;
+  border-color: #007bff !important;
 }
-
 
 main {
-  padding: 2rem 0;
+  padding: 2rem 0 4rem;
 }
 
-/* Estilo de las tarjetas */
-.card {
-  background-color: #1c1c1c; /* Fondo oscuro */
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+.section-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  margin: 20px 0 10px;
+  font-weight: 600;
+}
+
+.section-header p {
+  margin: 0 auto;
+  max-width: 640px;
+  color: #c9d3f0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: linear-gradient(145deg, rgba(30, 36, 52, 0.9), rgba(16, 18, 28, 0.98));
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  border-color: rgba(47, 118, 224, 0.5);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(47, 118, 224, 0.25), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card__link {
+  text-decoration: none;
   color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  gap: 10px;
+  height: 100%;
+  padding: 1.6rem 1.8rem;
+  text-align: left;
+  font-family: var(--card-font);
 }
 
-.card:hover {
-  transform: translateY(-5px); /* Efecto hover */
-}
-
-/* Aseguramos que el enlace cubra toda la tarjeta */
-.card a {
+.project-card__link:hover {
   text-decoration: none;
-  color: #fff;
 }
 
-.card a:hover {
-  color: #fff;
+.project-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-/* Diseño del grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas por fila */
-  gap: 1.5rem;
-  margin-top: 1rem;
-  justify-items: center; /* Centra los elementos dentro de cada celda del grid */
-}
-
-/* Estilo para los títulos y descripciones dentro de la tarjeta */
-.card h3 {
+.project-card h3 {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  font-weight: 600;
-  letter-spacing: 1.5px;
+  margin: 0;
+  letter-spacing: 0.4px;
 }
 
-.card p {
+.project-domain {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  align-self: flex-end;
+  text-align: right;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(214, 222, 245, 0.9);
+}
+
+.project-card__problem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.project-card__impact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  background: rgba(47, 118, 224, 0.12);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.project-card__impact p {
+  color: #e6edff;
+  font-weight: 600;
+}
+
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.project-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 4px 0 0;
+}
+
+.project-tags li {
+  font-size: 0.72rem;
+  letter-spacing: 0.6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #d2dcf7;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-tags li[data-tech="Python"] {
+  background: rgba(53, 114, 165, 0.25);
+  color: #cbe2ff;
+}
+
+.project-tags li[data-tech="Pandas"] {
+  background: rgba(24, 77, 99, 0.3);
+  color: #c8f1ff;
+}
+
+.project-tags li[data-tech="Scikit-learn"] {
+  background: rgba(245, 120, 52, 0.2);
+  color: #ffe0cc;
+}
+
+.project-tags li[data-tech="Graph Theory"],
+.project-tags li[data-tech="Teoria de Grafos"] {
+  background: rgba(114, 74, 202, 0.25);
+  color: #e4d7ff;
+}
+
+.project-tags li[data-tech="ETL"] {
+  background: rgba(34, 139, 230, 0.2);
+  color: #d6ecff;
+}
+
+.project-tags li[data-tech="Dashboards"] {
+  background: rgba(53, 196, 164, 0.25);
+  color: #d4fff1;
+}
+
+.project-tags li[data-tech="Monitoring"],
+.project-tags li[data-tech="Monitoreo"] {
+  background: rgba(117, 205, 81, 0.25);
+  color: #e3ffd4;
+}
+
+.project-tags li[data-tech="Risk"],
+.project-tags li[data-tech="Riesgo"] {
+  background: rgba(214, 74, 104, 0.25);
+  color: #ffd3de;
+}
+
+.stack-section {
+  margin: 60px 0 20px;
+}
+
+.stack-marquee {
+  display: flex;
+  gap: 40px;
+  overflow: hidden;
+  padding: 16px 0 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.stack-track {
+  display: inline-flex;
+  gap: 24px;
+  align-items: center;
+  animation: stack-scroll 22s linear infinite;
+}
+
+.stack-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e8efff;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.stack-item i {
+  font-size: 1.4rem;
+}
+
+.stack-item span {
+  letter-spacing: 0.4px;
+}
+
+@keyframes stack-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.project-detail {
+  padding-bottom: 2rem;
+}
+
+.project-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.project-hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.back-link {
+  align-self: flex-start;
+  text-decoration: none;
+  color: #9db3ff;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.5rem;
+}
+
+.back-link:hover {
+  color: #ffffff;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  background: rgba(21, 26, 41, 0.8);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8fa4d9;
+}
+
+.project-highlights h2 {
+  margin-bottom: 0.5rem;
+}
+
+.section-label {
+  margin-top: 0;
   font-size: 1rem;
-  line-height: 1.4;
+  color: #c9d3f0;
+  letter-spacing: 0.8px;
+}
+
+.highlight-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.6;
+  color: #d6def5;
 }
 
 footer {
@@ -124,7 +391,6 @@ footer {
   color: white;
   margin-top: 2rem;
 }
-
 
 @media (max-width: 600px) {
   .header-container {
@@ -146,19 +412,16 @@ footer {
     text-align: center;
   }
 
-  /* Ajustes de redes sociales en pantallas pequeñas */
   #social-links {
     justify-content: center;
     gap: 15px;
   }
 
-  /* Ajustar tamaño de la imagen si es necesario */
   .col img {
     width: 200px;
     height: 200px;
   }
 
-  /* Ajustar el tamaño del texto */
   #name {
     font-size: 35px;
   }
@@ -166,14 +429,26 @@ footer {
   #title {
     font-size: 25px;
   }
+
+  .stack-track {
+    animation-duration: 18s;
+  }
+
+  .stack-item {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .project-hero h1 {
+    font-size: 2rem;
+  }
 }
 
-
 #social-links {
-  display: flex;                /* Usamos Flexbox para centrar los íconos */
-  justify-content: center;      /* Centra los íconos horizontalmente */
-  align-items: center;          /* Alinea los íconos verticalmente */
-  margin-top: 20px;             /* Espaciado superior */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
   gap: 20px;
 }
 
@@ -187,7 +462,6 @@ footer {
 .social-icon:hover {
   transform: scale(1.2);
 }
-
 
 .floating-nav {
   position: fixed;
@@ -222,7 +496,6 @@ footer {
   transform: scale(1.2);
 }
 
-/* Círculo sobre el ícono con hover */
 .nav-item a:hover::before {
   content: '';
   position: absolute;
@@ -232,11 +505,10 @@ footer {
   height: 48px;
   border-radius: 50%;
   background-color: rgba(5, 36, 70, 0.2);
-  z-index: -1; /* Asegura que el círculo esté detrás del ícono */
+  z-index: -1;
   transform: translate(-50%, -50%);
 }
 
-/* Tooltip */
 .tooltip {
   position: absolute;
   left: 50%;
@@ -260,4 +532,3 @@ footer {
   opacity: 1;
   bottom: 150%;
 }
-

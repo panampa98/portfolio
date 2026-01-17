@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,24 +15,25 @@
   <header>
     <div class="container">
       <div id="language-selector" style="display: flex; justify-content: flex-end; align-items: center;">
-         <label>Select Language</label>
+         <label id="language-label">Select Language</label>
          <button id="en-btn" class="language-button" onclick="setLanguage('en')">EN</button>
          <button id="es-btn" class="language-button" onclick="setLanguage('es')">ES</button>
-       </div>
+      </div>
+    </div>
   </header>
 
   <nav class="floating-nav">
     <div class="nav-item">
       <a href="#about"><i class="fas fa-user"></i></a>
-      <span class="tooltip">About Me</span>
+      <span class="tooltip" data-i18n="navAbout">About Me</span>
     </div>
     <div class="nav-item">
       <a href="#projects"><i class="fas fa-briefcase"></i></a>
-      <span class="tooltip">Projects</span>
+      <span class="tooltip" data-i18n="navProjects">Projects</span>
     </div>
     <div class="nav-item">
       <a href="#contact"><i class="fas fa-envelope"></i></a>
-      <span class="tooltip">Contact</span>
+      <span class="tooltip" data-i18n="navContact">Contact</span>
     </div>
   </nav>  
 
@@ -72,64 +74,51 @@
     </section>
 
     <section id="projects">
-      <h2 id="projects-title" style="margin: 20px; font-weight: 600; text-align: center;">Projects</h2>
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <a href="https://linkdelproyecto1.com" target="_blank">
-              <h3>Project 1</h3>
-              <p>Description of the project. Click to know more!</p>
-            </a>
-          </div>
+      <div class="section-header">
+        <h2 id="projects-title">Projects</h2>
+        <p id="projects-subtitle"></p>
+      </div>
+      <div id="projects-grid" class="projects-grid"></div>
+    </section>
+
+
+    <section id="stack" class="stack-section">
+      <div class="section-header">
+        <h2>Stack</h2>
+        <p>Herramientas y tecnologias que uso con mas frecuencia.</p>
+      </div>
+      <div class="stack-marquee" aria-label="Stack logos">
+        <div class="stack-track">
+          <div class="stack-item"><i class="devicon-python-plain"></i><span>Python</span></div>
+          <div class="stack-item"><i class="devicon-pandas-original"></i><span>Pandas</span></div>
+          <div class="stack-item"><i class="devicon-numpy-original"></i><span>NumPy</span></div>
+          <div class="stack-item"><i class="devicon-scikitlearn-plain"></i><span>Scikit-learn</span></div>
+          <div class="stack-item"><i class="devicon-tensorflow-original"></i><span>TensorFlow</span></div>
+          <div class="stack-item"><i class="devicon-pytorch-original"></i><span>PyTorch</span></div>
+          <div class="stack-item"><i class="devicon-azure-plain"></i><span>Azure</span></div>
+          <div class="stack-item"><i class="devicon-postgresql-plain"></i><span>Postgres</span></div>
+          <div class="stack-item"><i class="devicon-git-plain"></i><span>Git</span></div>
+          <div class="stack-item"><i class="devicon-docker-plain"></i><span>Docker</span></div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <a href="https://linkdelproyecto2.com" target="_blank">
-              <h3>Project 2</h3>
-              <p>Description of the project. Click to know more!</p>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <a href="https://linkdelproyecto3.com" target="_blank">
-              <h3>Project 3</h3>
-              <p>Description of the project. Click to know more!</p>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <a href="https://linkdelproyecto4.com" target="_blank">
-              <h3>Project 4</h3>
-              <p>Description of the project. Click to know more!</p>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <a href="https://linkdelproyecto5.com" target="_blank">
-              <h3>Project 5</h3>
-              <p>Description of the project. Click to know more!</p>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <a href="https://linkdelproyecto6.com" target="_blank">
-              <h3>Project 6</h3>
-              <p>Description of the project. Click to know more!</p>
-            </a>
-          </div>
+        <div class="stack-track" aria-hidden="true">
+          <div class="stack-item"><i class="devicon-python-plain"></i><span>Python</span></div>
+          <div class="stack-item"><i class="devicon-pandas-original"></i><span>Pandas</span></div>
+          <div class="stack-item"><i class="devicon-numpy-original"></i><span>NumPy</span></div>
+          <div class="stack-item"><i class="devicon-scikitlearn-plain"></i><span>Scikit-learn</span></div>
+          <div class="stack-item"><i class="devicon-tensorflow-original"></i><span>TensorFlow</span></div>
+          <div class="stack-item"><i class="devicon-pytorch-original"></i><span>PyTorch</span></div>
+          <div class="stack-item"><i class="devicon-azure-plain"></i><span>Azure</span></div>
+          <div class="stack-item"><i class="devicon-postgresql-plain"></i><span>Postgres</span></div>
+          <div class="stack-item"><i class="devicon-git-plain"></i><span>Git</span></div>
+          <div class="stack-item"><i class="devicon-docker-plain"></i><span>Docker</span></div>
         </div>
       </div>
     </section>
 
-
     <section id="contact" style="padding: 50px 0;">
       <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center; letter-spacing: 1.5px;">
         <h2 id="contact-title" style="color: var(--primary-color); font-size: 36px; font-weight: 800; margin-bottom: 20px;">Contact Me</h2>
-        <p style="font-size: 18px; margin-bottom: 40px;">Feel free to reach out to me through any of the platforms below or via email.</p>
+        <p id="contact-description" style="font-size: 18px; margin-bottom: 40px;">Feel free to reach out to me through any of the platforms below or via email.</p>
     
         <!-- Social Links -->
         <div id="social-links" style="margin-bottom: 30px;">

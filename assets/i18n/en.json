@@ -1,0 +1,118 @@
+{
+  "labels": {
+    "languageLabel": "Select Language",
+    "aboutTitle": "About Me",
+    "aboutDescription": "I am a passionate data scientist with experience in Machine Learning, Deep Learning, Generative AI, Business Intelligence, and Graph Theory.",
+    "projectsTitle": "Projects",
+    "projectsSubtitle": "Selected work and measurable impact across mining and banking.",
+    "contactTitle": "Contact Me",
+    "contactDescription": "Feel free to reach out to me through any of the platforms below or via email.",
+    "navAbout": "About Me",
+    "navProjects": "Projects",
+    "navContact": "Contact",
+    "backToHome": "Back to home",
+    "projectDetailsTitle": "Project Details",
+    "highlightsLabel": "Highlights"
+  },
+  "projects": [
+    {
+      "slug": "anomaly-detection/sensor-failure-gps",
+      "title": "Reverse Sensor Failure Detection",
+      "domain": "Mining / Telematics",
+      "problem": "Detect reverse sensor failures before downtime.",
+      "impact": "90% precision, enabled proactive maintenance.",
+      "highlights": [
+        "Implemented an algorithm to detect reverse sensor failures with 90% accuracy using GPS data and kinematic models."
+      ],
+      "tags": ["Python", "Pandas", "Scikit-learn", "Graph Theory"]
+    },
+    {
+      "slug": "anomaly-detection/data-quality-monitoring",
+      "title": "Near Real-Time Data Quality Monitoring",
+      "domain": "Mining / Data Quality",
+      "problem": "Plan alarm reporting strategies in near real time.",
+      "impact": "Near real-time visibility for alarm reporting decisions.",
+      "highlights": [
+        "Built a data quality monitoring system to plan near real-time alarm reporting strategies."
+      ],
+      "tags": ["Python", "ETL", "Monitoring"]
+    },
+    {
+      "slug": "ml-systems/cas-monitoring-system",
+      "title": "CAS Data Pipeline and Monitoring Dashboard",
+      "domain": "Mining / Fleet Ops",
+      "problem": "Detect server drops, locate assets, and prioritize maintenance.",
+      "impact": "Optimized detection of server drops and maintenance prioritization.",
+      "highlights": [
+        "Designed and implemented a data pipeline and monitoring dashboard for CAS devices to improve asset visibility and maintenance decisions."
+      ],
+      "tags": ["Python", "ETL", "Dashboards"]
+    },
+    {
+      "slug": "graph-ml/mine-sectorization",
+      "title": "Mine Sectorization with Graph Clustering",
+      "domain": "Mining / Graph ML",
+      "problem": "Sectorize the mine into strategic monitoring areas.",
+      "impact": "Structured monitoring zones using clustering and label propagation.",
+      "highlights": [
+        "Developed a model to sectorize the mine into strategic areas using clustering, graph theory, and label propagation."
+      ],
+      "tags": ["Python", "Graph Theory", "Clustering"]
+    },
+    {
+      "slug": "dashboards/operator-behavior-monitor",
+      "title": "Operator Alert Monitoring and Driving Score",
+      "domain": "Safety / Operations",
+      "problem": "Score operator driving to take preventive action.",
+      "impact": "Preventive measures guided by operator alert scoring.",
+      "highlights": [
+        "Built an operator alert monitoring tool that scores driving to support preventive measures."
+      ],
+      "tags": ["Python", "Dashboards", "Safety"]
+    },
+    {
+      "slug": "dashboards/network-signal-kpi",
+      "title": "Network Signal Quality Monitoring",
+      "domain": "Network / Monitoring",
+      "problem": "Monitor KPIs for field coverage and signal quality.",
+      "impact": "Automated ETL and dashboards for network KPIs.",
+      "highlights": [
+        "Developed an automated ETL and KPI dashboard to monitor field coverage and signal quality."
+      ],
+      "tags": ["Python", "ETL", "Dashboards"]
+    },
+    {
+      "slug": "risk-modeling/over-indebtedness-model",
+      "title": "Over-Indebtedness Detection Model",
+      "domain": "Banking / Risk",
+      "problem": "Detect over-indebted leads with higher separation.",
+      "impact": "83% precision and +11% separation between good and bad leads.",
+      "highlights": [
+        "Developed a model to detect over-indebtedness with 83% accuracy and an 11% separation between good and bad leads (up from 5%)."
+      ],
+      "tags": ["Python", "Scikit-learn", "Risk"]
+    },
+    {
+      "slug": "graph-ml/income-inference-graph",
+      "title": "Income Inference with Graph Segmentation",
+      "domain": "Banking / Graph ML",
+      "problem": "Improve income inference accuracy with graph segmentation.",
+      "impact": "+2% accuracy gain on income inference.",
+      "highlights": [
+        "Complemented the income inference model with a graph-based segmenter, improving accuracy by +2%."
+      ],
+      "tags": ["Python", "Graph Theory", "ML"]
+    },
+    {
+      "slug": "ml-systems/nrt-alerting-pipeline",
+      "title": "ML Controls Monitoring Reports",
+      "domain": "Banking / Model Ops",
+      "problem": "Detect incidents in monthly ML control execution.",
+      "impact": "20+ summarized reports to catch stability and score issues.",
+      "highlights": [
+        "Delivered 20+ summarized reports to detect incidents in monthly execution controls for retail risk and collections ML models."
+      ],
+      "tags": ["Python", "Reporting", "Model Monitoring"]
+    }
+  ]
+}

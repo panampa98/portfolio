@@ -1,45 +1,201 @@
-const content = {
-  en: {
-    siteTitle: "[Your Name]",
-    aboutTitle: "About Me",
-    aboutDescription: "I am a passionate data scientist with experience in Machine Learning, Deep Learning, Generative AI, Business Intelligence, and Graph Theory.",
-    projectsTitle: "Projects",
-    projects: [
-      { title: "Predictive Analytics", desc: "Machine Learning models for predicting business outcomes." },
-      { title: "Deep Learning Classifier", desc: "Image classification using convolutional neural networks." },
-      { title: "BI Dashboard", desc: "Business Intelligence reports with Power BI and Tableau." },
-      { title: "Knowledge Graphs", desc: "Graph theory applied to recommendation systems." }
-    ],
-    contactTitle: "Contact"
-  },
-  es: {
-    siteTitle: "[Tu Nombre]",
-    aboutTitle: "Sobre mí",
-    aboutDescription: "Soy un científico de datos apasionado con experiencia en Machine Learning, Deep Learning, IA Generativa, Inteligencia de Negocios y Teoría de Grafos.",
-    projectsTitle: "Proyectos",
-    projects: [
-      { title: "Análisis Predictivo", desc: "Modelos de Machine Learning para predecir resultados de negocio." },
-      { title: "Clasificador de Deep Learning", desc: "Clasificación de imágenes usando redes neuronales convolucionales." },
-      { title: "Dashboard de BI", desc: "Informes de Inteligencia de Negocios con Power BI y Tableau." },
-      { title: "Grafos de Conocimiento", desc: "Teoría de grafos aplicada a sistemas de recomendación." }
-    ],
-    contactTitle: "Contacto"
+const supportedLangs = ["en", "es"];
+let currentLang = "en";
+let currentData = null;
+
+function getPreferredLang() {
+  const url = new URL(window.location.href);
+  const urlLang = url.searchParams.get("lang");
+  if (supportedLangs.includes(urlLang)) {
+    return urlLang;
   }
-};
-
-function setLanguage(lang) {
-  // document.getElementById("site-title").textContent = content[lang].siteTitle;
-  document.getElementById("about-title").textContent = content[lang].aboutTitle;
-  document.getElementById("about-description").textContent = content[lang].aboutDescription;
-  // document.getElementById("projects-title").textContent = content[lang].projectsTitle;
-  document.getElementById("contact-title").textContent = content[lang].contactTitle;
-
-  // update active lang button
-  document.querySelectorAll('.language-button').forEach(btn => {
-    btn.classList.remove('active-language');
-  });
-  document.getElementById(`${lang}-btn`).classList.add('active-language');
+  const storedLang = localStorage.getItem("lang");
+  if (supportedLangs.includes(storedLang)) {
+    return storedLang;
+  }
+  return "en";
 }
 
-// Set default language
-setLanguage('en');
+function updateUrlLang(lang) {
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", lang);
+  window.history.replaceState({}, "", url.toString());
+}
+
+function setTextById(id, value) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.textContent = value;
+  }
+}
+
+function setTextByDataKey(key, value) {
+  document.querySelectorAll(`[data-i18n="${key}"]`).forEach((element) => {
+    element.textContent = value;
+  });
+}
+
+function updateLanguageButtons(lang) {
+  document.querySelectorAll(".language-button").forEach((btn) => {
+    btn.classList.remove("active-language");
+  });
+  const activeButton = document.getElementById(`${lang}-btn`);
+  if (activeButton) {
+    activeButton.classList.add("active-language");
+  }
+}
+
+function withLang(href, lang) {
+  const parts = href.split("#");
+  const path = parts[0];
+  const hash = parts[1] ? `#${parts[1]}` : "";
+  const separator = path.includes("?") ? "&" : "?";
+  return `${path}${separator}lang=${lang}${hash}`;
+}
+
+function updateNavLinks(lang) {
+  document.querySelectorAll("[data-nav-link]").forEach((link) => {
+    const base = link.getAttribute("data-nav-link");
+    link.setAttribute("href", withLang(base, lang));
+  });
+}
+
+function renderProjects(projects) {
+  const grid = document.getElementById("projects-grid");
+  if (!grid) {
+    return;
+  }
+
+  grid.innerHTML = "";
+  projects.forEach((project) => {
+    const card = document.createElement("article");
+    card.className = "project-card";
+
+    const tags = Array.isArray(project.tags) ? project.tags : [];
+    const tagsMarkup = tags.length
+      ? `<ul class="project-tags">${tags.map((tag) => `<li data-tech="${tag}">${tag}</li>`).join("")}</ul>`
+      : "";
+
+    const domainMarkup = project.domain
+      ? `<span class="project-domain">${project.domain}</span>`
+      : "";
+
+    card.innerHTML = `
+      <a class="project-card__link" href="${withLang(`projects/${project.slug}/index.html`, currentLang)}">
+        <div class="project-card__header">
+          <h3>${project.title}</h3>
+          ${domainMarkup}
+        </div>
+        <div class="project-card__problem">
+          <span class="label">Problem</span>
+          <p>${project.problem || ""}</p>
+        </div>
+        <div class="project-card__impact">
+          <span class="label">Impact</span>
+          <p>${project.impact || ""}</p>
+        </div>
+        ${tagsMarkup}
+      </a>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+function renderProjectDetails(projects) {
+  const slug = document.body.dataset.projectSlug;
+  if (!slug) {
+    return;
+  }
+
+  const project = projects.find((item) => item.slug === slug);
+  if (!project) {
+    setTextById("project-title", "Project not found");
+    return;
+  }
+
+  setTextById("project-title", project.title);
+  setTextById("project-summary", project.impact || project.summary || "");
+  const highlightsList = document.getElementById("project-highlights");
+  if (highlightsList) {
+    highlightsList.innerHTML = "";
+    project.highlights.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      highlightsList.appendChild(li);
+    });
+  }
+
+  const tagsList = document.getElementById("project-tags");
+  if (tagsList) {
+    tagsList.innerHTML = "";
+    (project.tags || []).forEach((tag) => {
+      const li = document.createElement("li");
+      li.textContent = tag;
+      tagsList.appendChild(li);
+    });
+  }
+
+  document.title = `DevPold - ${project.title}`;
+}
+
+function applyLabels(labels) {
+  setTextById("language-label", labels.languageLabel);
+  setTextById("about-title", labels.aboutTitle);
+  setTextById("about-description", labels.aboutDescription);
+  setTextById("projects-title", labels.projectsTitle);
+  setTextById("projects-subtitle", labels.projectsSubtitle);
+  setTextById("contact-title", labels.contactTitle);
+  setTextById("contact-description", labels.contactDescription);
+  setTextById("project-details-heading", labels.projectDetailsTitle);
+
+  setTextByDataKey("navAbout", labels.navAbout);
+  setTextByDataKey("navProjects", labels.navProjects);
+  setTextByDataKey("navContact", labels.navContact);
+  setTextByDataKey("backToHome", labels.backToHome);
+  setTextByDataKey("highlightsLabel", labels.highlightsLabel);
+}
+
+function getI18nBasePath() {
+  if (document.body.dataset.projectSlug) {
+    return "../../../assets/i18n";
+  }
+  return "assets/i18n";
+}
+
+async function fetchLanguageData(lang) {
+  const response = await fetch(`${getI18nBasePath()}/${lang}.json`);
+  if (!response.ok) {
+    throw new Error(`Unable to load language: ${lang}`);
+  }
+  return response.json();
+}
+
+async function setLanguage(lang) {
+  if (!supportedLangs.includes(lang)) {
+    currentLang = "en";
+  } else {
+    currentLang = lang;
+  }
+
+  try {
+    currentData = await fetchLanguageData(currentLang);
+  } catch (error) {
+    currentLang = "en";
+    currentData = await fetchLanguageData("en");
+  }
+
+  localStorage.setItem("lang", currentLang);
+  updateUrlLang(currentLang);
+  updateLanguageButtons(currentLang);
+  updateNavLinks(currentLang);
+  applyLabels(currentData.labels);
+  renderProjects(currentData.projects);
+  renderProjectDetails(currentData.projects);
+
+  document.documentElement.setAttribute("lang", currentLang);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const initialLang = getPreferredLang();
+  setLanguage(initialLang);
+});

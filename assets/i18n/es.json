@@ -1,0 +1,118 @@
+{
+  "labels": {
+    "languageLabel": "Seleccionar idioma",
+    "aboutTitle": "Sobre mi",
+    "aboutDescription": "Soy un cientifico de datos apasionado con experiencia en Machine Learning, Deep Learning, IA Generativa, Inteligencia de Negocios y Teoria de Grafos.",
+    "projectsTitle": "Proyectos",
+    "projectsSubtitle": "Trabajo seleccionado e impacto medible en mineria y banca.",
+    "contactTitle": "Contacto",
+    "contactDescription": "Si deseas contactarme, puedes hacerlo por las plataformas de abajo o via correo.",
+    "navAbout": "Sobre mi",
+    "navProjects": "Proyectos",
+    "navContact": "Contacto",
+    "backToHome": "Volver al inicio",
+    "projectDetailsTitle": "Detalles del proyecto",
+    "highlightsLabel": "Logros"
+  },
+  "projects": [
+    {
+      "slug": "anomaly-detection/sensor-failure-gps",
+      "title": "Deteccion de fallas del sensor de reversa",
+      "domain": "Mineria / Telematica",
+      "problem": "Detectar fallas del sensor de reversa antes de la detencion.",
+      "impact": "90% de precision y mantenimiento preventivo.",
+      "highlights": [
+        "Implemente un algoritmo para detectar fallas del sensor de reversa con 90% de precision usando datos GPS y modelos cinematicos."
+      ],
+      "tags": ["Python", "Pandas", "Scikit-learn", "Teoria de Grafos"]
+    },
+    {
+      "slug": "anomaly-detection/data-quality-monitoring",
+      "title": "Monitoreo de calidad de datos casi en tiempo real",
+      "domain": "Mineria / Calidad de datos",
+      "problem": "Planificar reportes de alarmas casi en tiempo real.",
+      "impact": "Visibilidad casi en tiempo real para reportes de alarmas.",
+      "highlights": [
+        "Desarrolle un sistema de monitoreo de calidad de datos para planificar estrategias de reportes de alarmas casi en tiempo real."
+      ],
+      "tags": ["Python", "ETL", "Monitoreo"]
+    },
+    {
+      "slug": "ml-systems/cas-monitoring-system",
+      "title": "Pipeline y dashboard de monitoreo CAS",
+      "domain": "Mineria / Flota",
+      "problem": "Detectar caidas de servidor, localizar activos y priorizar mantenimiento.",
+      "impact": "Mejor deteccion de caidas de servidor y mantenimiento prioritario.",
+      "highlights": [
+        "Disene e implemente un pipeline de datos y dashboard de monitoreo para dispositivos CAS, optimizando la deteccion de caidas de servidor, la localizacion de activos y la priorizacion de mantenimiento de vehiculos."
+      ],
+      "tags": ["Python", "ETL", "Dashboards"]
+    },
+    {
+      "slug": "graph-ml/mine-sectorization",
+      "title": "Sectorizacion de mina con clustering y grafos",
+      "domain": "Mineria / Graph ML",
+      "problem": "Sectorizar la mina en areas estrategicas de monitoreo.",
+      "impact": "Zonas de monitoreo definidas con clustering y grafos.",
+      "highlights": [
+        "Desarrolle un modelo para sectorizar la mina en areas estrategicas usando clustering, teoria de grafos y propagacion de etiquetas."
+      ],
+      "tags": ["Python", "Teoria de Grafos", "Clustering"]
+    },
+    {
+      "slug": "dashboards/operator-behavior-monitor",
+      "title": "Monitoreo de alertas y puntaje de conduccion",
+      "domain": "Seguridad / Operaciones",
+      "problem": "Calificar la conduccion de operadores para medidas preventivas.",
+      "impact": "Medidas preventivas basadas en puntajes de alerta.",
+      "highlights": [
+        "Desarrolle una herramienta de monitoreo de alertas que califica la conduccion de operadores para tomar medidas preventivas."
+      ],
+      "tags": ["Python", "Dashboards", "Seguridad"]
+    },
+    {
+      "slug": "dashboards/network-signal-kpi",
+      "title": "Monitoreo de calidad de senal de red",
+      "domain": "Red / Monitoreo",
+      "problem": "Monitorear KPIs de cobertura y calidad de senal.",
+      "impact": "ETL automatizado y dashboards para KPIs de red.",
+      "highlights": [
+        "Desarrolle una herramienta de monitoreo de calidad de senal de red con proceso ETL automatizado y dashboard de KPIs."
+      ],
+      "tags": ["Python", "ETL", "Dashboards"]
+    },
+    {
+      "slug": "risk-modeling/over-indebtedness-model",
+      "title": "Modelo de deteccion de sobreendeudamiento",
+      "domain": "Banca / Riesgo",
+      "problem": "Detectar sobreendeudamiento con mejor separacion.",
+      "impact": "83% de precision y +11% de separacion.",
+      "highlights": [
+        "Desarrolle un modelo para detectar sobreendeudamiento con 83% de precision y 11% de separacion entre leads buenos y malos (antes 5%)."
+      ],
+      "tags": ["Python", "Scikit-learn", "Riesgo"]
+    },
+    {
+      "slug": "graph-ml/income-inference-graph",
+      "title": "Inferencia de ingresos con segmentacion de grafos",
+      "domain": "Banca / Graph ML",
+      "problem": "Mejorar la inferencia de ingresos con segmentacion de grafos.",
+      "impact": "+2% de precision en inferencia de ingresos.",
+      "highlights": [
+        "Complemente el modelo de inferencia de ingresos con un segmentador basado en teoria de grafos, logrando +2% de precision."
+      ],
+      "tags": ["Python", "Teoria de Grafos", "ML"]
+    },
+    {
+      "slug": "ml-systems/nrt-alerting-pipeline",
+      "title": "Reportes de monitoreo de controles ML",
+      "domain": "Banca / Model Ops",
+      "problem": "Detectar incidencias en controles mensuales de modelos.",
+      "impact": "Mas de 20 reportes para estabilidad y puntuaciones.",
+      "highlights": [
+        "Desarrolle mas de 20 reportes resumidos para detectar incidencias en controles de ejecucion mensual de modelos ML de Riesgos Retail y Cobranzas."
+      ],
+      "tags": ["Python", "Reporting", "Model Monitoring"]
+    }
+  ]
+}
