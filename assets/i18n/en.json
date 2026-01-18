@@ -2,7 +2,11 @@
   "labels": {
     "languageLabel": "Select Language",
     "aboutTitle": "About Me",
-    "aboutDescription": "I am a passionate data scientist with experience in Machine Learning, Deep Learning, Generative AI, Business Intelligence, and Graph Theory.",
+    "aboutSubtitle": "Applied Machine Learning · Analytics Systems",
+    "aboutDescription": "Applied Data Scientist and Mechatronics Engineer with experience building data pipelines, predictive models, and monitoring systems for high-reliability, data-intensive environments across industrial and financial domains.\n\nI focus on designing scalable analytics solutions that improve operational efficiency, cost optimization, risk monitoring, and decision-making, combining strong analytical thinking with practical engineering judgment.",
+    "aboutCta": "↓ View selected projects",
+    "problemLabel": "Problem",
+    "impactLabel": "Impact",
     "projectsTitle": "Projects",
     "projectsSubtitle": "Selected work and measurable impact across mining and banking.",
     "stackTitle": "Tech Stack",

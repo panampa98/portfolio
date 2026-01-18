@@ -94,6 +94,10 @@ function renderProjects(projects) {
     return;
   }
 
+  const labels = (currentData && currentData.labels) || {};
+  const problemLabel = labels.problemLabel || "Problem";
+  const impactLabel = labels.impactLabel || "Impact";
+
   grid.innerHTML = "";
   projects.forEach((project) => {
     const card = document.createElement("article");
@@ -115,11 +119,11 @@ function renderProjects(projects) {
           ${domainMarkup}
         </div>
         <div class="project-card__problem">
-          <span class="label">Problem</span>
+          <span class="label">${problemLabel}</span>
           <p>${project.problem || ""}</p>
         </div>
         <div class="project-card__impact">
-          <span class="label">Impact</span>
+          <span class="label">${impactLabel}</span>
           <p>${project.impact || ""}</p>
         </div>
         ${tagsMarkup}
@@ -170,7 +174,9 @@ function renderProjectDetails(projects) {
 function applyLabels(labels) {
   setTextById("language-label", labels.languageLabel);
   setTextById("about-title", labels.aboutTitle);
+  setTextById("about-subtitle", labels.aboutSubtitle);
   setTextById("about-description", labels.aboutDescription);
+  setTextById("about-cta", labels.aboutCta);
   setTextById("projects-title", labels.projectsTitle);
   setTextById("projects-subtitle", labels.projectsSubtitle);
   setTextById("contact-title", labels.contactTitle);

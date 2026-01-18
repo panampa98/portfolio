@@ -2,7 +2,11 @@
   "labels": {
     "languageLabel": "Seleccionar idioma",
     "aboutTitle": "Sobre mi",
-    "aboutDescription": "Soy un cientifico de datos apasionado con experiencia en Machine Learning, Deep Learning, IA Generativa, Inteligencia de Negocios y Teoria de Grafos.",
+    "aboutSubtitle": "Machine Learning Aplicado · Sistemas de Analítica",
+    "aboutDescription": "Científico de datos aplicado e ingeniero mecatrínico con experiencia construyendo pipelines de datos, modelos predictivos y sistemas de monitoreo para entornos de alta confiabilidad e intensivos en datos en dominios industriales y financieros.\n\nMe enfoco en diseñar soluciones de analítica escalables que mejoran la eficiencia operativa, la optimización de costos, el monitoreo de riesgos y la toma de decisiones, combinando pensamiento analítico sólido con juicio ingenieril práctico.",
+    "aboutCta": "↓ Ver proyectos seleccionados",
+    "problemLabel": "Problema",
+    "impactLabel": "Impacto",
     "projectsTitle": "Proyectos",
     "projectsSubtitle": "Trabajo seleccionado e impacto medible en mineria y banca.",
     "stackTitle": "Stack tecnologico",
@@ -27,7 +31,7 @@
       "highlights": [
         "Implemente un algoritmo para detectar fallas del sensor de reversa con 90% de precision usando datos GPS y modelos cinematicos."
       ],
-      "tags": ["Python", "Pandas", "Scikit-learn", "Teoria de Grafos"]
+      "tags": ["Python", "Pandas", "SQL"]
     },
     {
       "slug": "anomaly-detection/data-quality-monitoring",

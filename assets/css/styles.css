@@ -95,6 +95,119 @@ main {
   padding: 2rem 0 4rem;
 }
 
+/* ====== About Hero ====== */
+.about-hero {
+  --profile-size: 230px;
+  position: relative;
+  min-height: 420px;
+  margin: 20px calc(50% - 50vw) 0;
+  width: 100vw;
+  padding: 0 calc(50vw - 50%);
+  overflow: hidden;
+  background: transparent;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 36px;
+  padding: 64px 0;
+}
+
+.about-hero .copy {
+  max-width: 640px;
+}
+
+.about-hero #name {
+  color: var(--primary-color);
+  font-size: 50px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.about-hero #title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.about-subtitle {
+  margin: -6px 0 18px;
+  font-size: 0.95rem;
+  letter-spacing: 0.6px;
+  color: rgba(207, 219, 255, 0.7);
+}
+
+.about-hero #about-title {
+  margin: 0 0 12px;
+}
+
+.about-hero #about-description {
+  margin: 0 0 16px;
+  color: rgba(234, 240, 255, 0.78);
+  white-space: pre-line;
+}
+
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  letter-spacing: 0.6px;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.about-cta:hover {
+  color: #ffffff;
+  background: rgba(47, 118, 224, 0.2);
+  text-decoration: none;
+  transform: translateY(1px);
+}
+
+.about-hero #social-links {
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+.profile-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-wrap {
+  position: relative;
+  width: var(--profile-size);
+  height: var(--profile-size);
+  flex: 0 0 auto;
+}
+
+.profile {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid rgba(160, 190, 255, 0.25);
+  box-shadow: 0 0 0 10px rgba(90, 140, 255, 0.08);
+}
+
+.profile-ring {
+  position: absolute;
+  inset: -20px;
+  border-radius: 999px;
+  border: 1px solid rgba(120, 170, 255, 0.25);
+  filter: drop-shadow(0 0 12px rgba(90, 140, 255, 0.25));
+}
+
 .section-header {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -109,6 +222,70 @@ main {
   margin: 0 auto;
   max-width: 640px;
   color: #c9d3f0;
+}
+
+.contact-section {
+  padding: 60px 0 40px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 8px 6px 0;
+}
+
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px 0 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-label {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: rgba(201, 211, 240, 0.8);
+}
+
+.contact-socials {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.contact-socials .social-icon {
+  font-size: 26px;
+  margin: 0;
+  color: rgba(230, 236, 255, 0.9);
+}
+
+.contact-socials .social-icon:hover {
+  color: #ffffff;
+}
+
+.contact-emails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-email {
+  color: rgba(230, 236, 255, 0.88);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.contact-email:hover {
+  color: var(--primary-color);
+  transform: translateX(4px);
 }
 
 .projects-grid {
@@ -540,6 +717,52 @@ footer {
 
   .project-hero h1 {
     font-size: 2rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 44px 0;
+  }
+
+  .about-hero {
+    --profile-size: 180px;
+    padding: 0 calc(50vw - 50%);
+  }
+
+  .about-hero #name {
+    font-size: 36px;
+  }
+
+  .about-hero #title {
+    font-size: 22px;
+  }
+
+  .about-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+  }
+
+  .about-hero #social-links {
+    justify-content: center;
+  }
+
+  .profile-stack {
+    gap: 30px;
+  }
+
+  .profile-wrap {
+    margin: 8px auto 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    text-align: center;
+  }
+
+  .contact-socials {
+    justify-content: center;
   }
 }
 

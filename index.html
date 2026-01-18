@@ -44,39 +44,31 @@
   </nav>  
 
   <main class="container">
-    <section id="about">
-      <div class="row" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; margin-top: 20px;">
-        
-        <!-- Foto de perfil -->
-        <div class="col" style="flex: 1 1 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
-          <!-- Foto -->
-          <div>
-            <img src="assets/images/photo.jpg" alt="Mi Foto"
-            style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; border: none;">
-          </div>
+    <section id="about" class="about-hero">
+      <div class="about-content">
+        <div class="copy">
+          <h1 id="name">Pold Anampa</h1>
+          <p id="title">Data Scientist</p>
+          <p id="about-subtitle" class="about-subtitle">Applied Machine Learning · Analytics Systems</p>
+          <p id="about-description">
+            Applied Data Scientist and Mechatronics Engineer with experience building data pipelines, predictive models, and monitoring systems for high-reliability, data-intensive environments across industrial and business domains.
+            I focus on designing scalable analytics solutions that improve operational efficiency, cost optimization, risk monitoring, and decision-making, combining strong analytical thinking with practical engineering judgment.
+          </p>
+          <a id="about-cta" class="about-cta" href="#projects">↓ Ver proyectos seleccionados</a>
+        </div>
 
-          <!-- Redes sociales -->
-          <div id="social-links">
+        <div class="profile-stack">
+          <div class="profile-wrap">
+            <img class="profile" src="assets/images/photo.jpg" alt="Mi Foto">
+            <div class="profile-ring" aria-hidden="true"></div>
+          </div>
+          <div id="social-links" class="about-social">
             <a href="https://www.linkedin.com/in/pold-anampa-saravia" target="_blank" class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
             <a href="https://github.com/panampa98" target="_blank" class="social-icon"><i class="fab fa-github fa-2x"></i></a>
             <a href="https://www.tiktok.com/@devpold" target="_blank" class="social-icon"><i class="fab fa-tiktok fa-2x"></i></a>
           </div>
         </div>
-      
-        <!-- Info personal -->
-        <div class="col" style="flex: 3 1 300px;">
-          <div>
-            <h1 id="name" style="color: var(--primary-color); font-size: 50px; font-weight: 800;">Pold Anampa</h1>
-            <p id="title" style="font-size: 30px; font-weight: 600;">Data Scientist</p>
-          </div>
-          <h2 id="about-title">About Me</h2>
-          <p id="about-description">
-            I am a passionate data scientist with experience in Machine Learning, Deep Learning, Generative AI, Business Intelligence, and Graph Theory.
-          </p>
-        </div>
       </div>
-      
-      
     </section>
 
     <section id="projects">
@@ -136,28 +128,34 @@
       </div>
     </section>
 
-    <section id="contact" style="padding: 50px 0;">
-      <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center; letter-spacing: 1.5px;">
-        <h2 id="contact-title" style="color: var(--primary-color); font-size: 36px; font-weight: 800; margin-bottom: 20px;">Contact Me</h2>
-        <p id="contact-description" style="font-size: 18px; margin-bottom: 40px;">Feel free to reach out to me through any of the platforms below or via email.</p>
-    
-        <!-- Social Links -->
-        <div id="social-links" style="margin-bottom: 30px;">
-          <a href="https://www.linkedin.com/in/pold-anampa-saravia" target="_blank" class="social-icon" style="margin: 0 15px; color: var(--text-color); font-size: 30px; transition: color 0.3s;">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/panampa98" target="_blank" class="social-icon" style="margin: 0 15px; color: var(--text-color); font-size: 30px; transition: color 0.3s;">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.tiktok.com/@devpold" target="_blank" class="social-icon" style="margin: 0 15px; color: var(--text-color); font-size: 30px; transition: color 0.3s;">
-            <i class="fab fa-tiktok"></i>
-          </a>
+    <section id="contact" class="contact-section">
+      <div class="section-header">
+        <h2 id="contact-title">Contact Me</h2>
+        <p id="contact-description">Feel free to reach out to me through any of the platforms below or via email.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-block">
+          <h3 class="contact-label">Social</h3>
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/pold-anampa-saravia" target="_blank" class="social-icon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/panampa98" target="_blank" class="social-icon" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.tiktok.com/@devpold" target="_blank" class="social-icon" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
         </div>
-    
-        <!-- Contact Emails -->
-        <div id="emails" style="font-size: 18px; color: #555;">
-          <p><strong>Email:</strong> <a href="mailto:dev.pold98@gmail.com" style="color: var(--primary-color); text-decoration: none; transition: color 0.3s;">dev.pold98@gmail.com</a></p>
-          <p><strong>Email:</strong> <a href="mailto:poldanampa@gmail.com" style="color: var(--primary-color); text-decoration: none; transition: color 0.3s;">poldanampa@gmail.com</a></p>
+
+        <div class="contact-block">
+          <h3 class="contact-label">Email</h3>
+          <div class="contact-emails">
+            <a class="contact-email" href="mailto:dev.pold98@gmail.com">dev.pold98@gmail.com</a>
+            <a class="contact-email" href="mailto:poldanampa@gmail.com">poldanampa@gmail.com</a>
+          </div>
         </div>
       </div>
     </section>
