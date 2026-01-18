@@ -37,10 +37,12 @@ function setTextByDataKey(key, value) {
 function updateLanguageButtons(lang) {
   document.querySelectorAll(".language-button").forEach((btn) => {
     btn.classList.remove("active-language");
+    btn.setAttribute("aria-pressed", "false");
   });
   const activeButton = document.getElementById(`${lang}-btn`);
   if (activeButton) {
     activeButton.classList.add("active-language");
+    activeButton.setAttribute("aria-pressed", "true");
   }
 }
 
@@ -56,6 +58,33 @@ function updateNavLinks(lang) {
   document.querySelectorAll("[data-nav-link]").forEach((link) => {
     const base = link.getAttribute("data-nav-link");
     link.setAttribute("href", withLang(base, lang));
+  });
+}
+
+function applyStackIconFallbacks() {
+  document.querySelectorAll("img.stack-icon").forEach((img) => {
+    const fallbackSrc = img.dataset.fallback;
+    if (!fallbackSrc) {
+      return;
+    }
+
+    const markLoaded = () => {
+      img.classList.add("is-loaded");
+    };
+
+    img.addEventListener("load", markLoaded);
+
+    img.addEventListener("error", () => {
+      img.src = fallbackSrc;
+    });
+
+    if (img.complete) {
+      if (img.naturalWidth === 0) {
+        img.src = fallbackSrc;
+      } else {
+        markLoaded();
+      }
+    }
   });
 }
 
@@ -150,7 +179,10 @@ function applyLabels(labels) {
 
   setTextByDataKey("navAbout", labels.navAbout);
   setTextByDataKey("navProjects", labels.navProjects);
+  setTextByDataKey("navStack", labels.navStack);
   setTextByDataKey("navContact", labels.navContact);
+  setTextByDataKey("stackTitle", labels.stackTitle);
+  setTextByDataKey("stackSubtitle", labels.stackSubtitle);
   setTextByDataKey("backToHome", labels.backToHome);
   setTextByDataKey("highlightsLabel", labels.highlightsLabel);
 }
@@ -198,4 +230,5 @@ async function setLanguage(lang) {
 document.addEventListener("DOMContentLoaded", () => {
   const initialLang = getPreferredLang();
   setLanguage(initialLang);
+  applyStackIconFallbacks();
 });
