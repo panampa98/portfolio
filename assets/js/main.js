@@ -163,13 +163,13 @@ function renderProjects(projects) {
 function renderProjectDetails(projects) {
   const slug = document.body.dataset.projectSlug;
   if (!slug) {
-    return;
+    return null;
   }
 
   const project = projects.find((item) => item.slug === slug);
   if (!project) {
     setTextById("project-title", "Project not found");
-    return;
+    return null;
   }
 
   setTextById("project-title", project.title);
@@ -195,6 +195,7 @@ function renderProjectDetails(projects) {
   }
 
   document.title = `DevPold - ${project.title}`;
+  return project;
 }
 
 function applyLabels(labels) {
@@ -217,6 +218,55 @@ function applyLabels(labels) {
   setTextByDataKey("stackSubtitle", labels.stackSubtitle);
   setTextByDataKey("backToHome", labels.backToHome);
   setTextByDataKey("highlightsLabel", labels.highlightsLabel);
+}
+
+function resolveI18nValue(source, path) {
+  if (!source || !path) {
+    return undefined;
+  }
+
+  return path.split(".").reduce((acc, part) => {
+    if (acc == null) {
+      return undefined;
+    }
+    if (/^\d+$/.test(part)) {
+      const index = Number(part);
+      return Array.isArray(acc) ? acc[index] : undefined;
+    }
+    return acc[part];
+  }, source);
+}
+
+function applyProjectI18n(project) {
+  if (!project || !project.i18n) {
+    return;
+  }
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+    const value = resolveI18nValue(project.i18n, key);
+    if (typeof value === "string") {
+      element.textContent = value;
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-attr]").forEach((element) => {
+    const attrSpec = element.getAttribute("data-i18n-attr");
+    if (!attrSpec) {
+      return;
+    }
+
+    const parts = attrSpec.split(":");
+    if (parts.length !== 2) {
+      return;
+    }
+
+    const [attr, key] = parts;
+    const value = resolveI18nValue(project.i18n, key);
+    if (typeof value === "string") {
+      element.setAttribute(attr, value);
+    }
+  });
 }
 
 function getI18nBasePath() {
@@ -254,7 +304,8 @@ async function setLanguage(lang) {
   updateNavLinks(currentLang);
   applyLabels(currentData.labels);
   renderProjects(currentData.projects);
-  renderProjectDetails(currentData.projects);
+  const currentProject = renderProjectDetails(currentData.projects);
+  applyProjectI18n(currentProject);
 
   document.documentElement.setAttribute("lang", currentLang);
 }

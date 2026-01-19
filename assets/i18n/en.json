@@ -53,7 +53,158 @@
       "highlights": [
         "Designed a data pipeline and health scoring model for CAS devices, improving fleet visibility and maintenance decisions."
       ],
-      "tags": ["SQL Server", "MongoDB", "Power BI", "Data Quality", "Health Scoring"]
+      "tags": ["SQL Server", "MongoDB", "Power BI", "Data Quality", "Health Scoring"],
+      "i18n": {
+        "cas": {
+          "hero": {
+            "eyebrow": "Device Health Monitoring Platform",
+            "title": "CAS Device Health Monitoring Platform",
+            "subtitle": "Proactive monitoring and health scoring for collision-avoidance devices across industrial fleets.",
+            "chips": [
+              "SQL Server",
+              "MongoDB",
+              "Power BI",
+              "Data Quality",
+              "Health Scoring"
+            ],
+            "confidentialNote": "Screenshots and diagrams are anonymized due to NDA."
+          },
+          "panel": {
+            "focus": {
+              "label": "Focus",
+              "value": "Fleet-wide visibility"
+            },
+            "outcome": {
+              "label": "Outcome",
+              "value": "Proactive maintenance decisions"
+            },
+            "audience": {
+              "label": "Audience",
+              "value": "Field engineers and support teams"
+            }
+          },
+          "summary": {
+            "title": "Project Summary",
+            "subtitle": "Quick scan of the core story.",
+            "cards": [
+              {
+                "title": "Problem",
+                "body": "Lack of centralized monitoring to understand CAS device health across fleets."
+              },
+              {
+                "title": "Solution",
+                "body": "Data pipelines with health scoring to unify status, connectivity, and history."
+              },
+              {
+                "title": "Impact",
+                "body": "Proactive maintenance planning and prioritization of critical devices."
+              },
+              {
+                "title": "Users",
+                "body": "Reliability engineers and technical support teams."
+              }
+            ]
+          },
+          "dashboard": {
+            "title": "Dashboard Preview",
+            "subtitle": "Two key views that drive daily decisions.",
+            "views": [
+              {
+                "alt": "CAS dashboard overview with connectivity and device health trends",
+                "title": "Connectivity and Fleet Health",
+                "bullets": [
+                  "Highlights drop-off trends and devices at risk.",
+                  "Tracks historical indicators to spot recurring issues."
+                ]
+              },
+              {
+                "alt": "CAS dashboard with per-device variables and daily scores",
+                "title": "Daily Health Scoring",
+                "bullets": [
+                  "Ranks assets by current criticality.",
+                  "Guides maintenance scheduling and field checks."
+                ]
+              }
+            ]
+          },
+          "architecture": {
+            "title": "Data & Processing Architecture",
+            "subtitle": "From device telemetry to analytics.",
+            "alt": "Architecture diagram for CAS data and processing flow",
+            "items": [
+              "Data sources: MongoDB and SQL Server.",
+              "Scheduled pipelines for daily ingestion and scoring.",
+              "Historical storage for trend analysis.",
+              "Analytics layer powered by Power BI."
+            ]
+          },
+          "highlights": {
+            "title": "Key Technical Highlights",
+            "subtitle": "Engineering choices that shaped the solution.",
+            "cards": [
+              {
+                "title": "Weighted health scoring",
+                "body": "70% hardware signals and 30% connectivity indicators for balanced prioritization."
+              },
+              {
+                "title": "Daily historization",
+                "body": "Time-series storage to compare current status against long-term behavior."
+              },
+              {
+                "title": "Data quality metrics",
+                "body": "Freshness, completeness, and anomaly flags embedded in the pipeline."
+              },
+              {
+                "title": "Critical asset ranking",
+                "body": "Automatic prioritization for field teams and maintenance planning."
+              },
+              {
+                "title": "Maintenance-first design",
+                "body": "Focused on reducing downtime and guiding preventive actions."
+              }
+            ]
+          },
+          "role": {
+            "title": "Role & Responsibilities",
+            "subtitle": "Ownership across data, analytics, and stakeholder support.",
+            "items": [
+              "Designed the end-to-end data pipeline.",
+              "Modeled and optimized SQL Server storage.",
+              "Implemented historization and data quality logic.",
+              "Defined technical metrics and health scoring.",
+              "Built analytical views for Power BI dashboards.",
+              "Supported engineering and maintenance users."
+            ]
+          },
+          "stack": {
+            "title": "Tech Stack",
+            "subtitle": "Grouped by the layers used in production.",
+            "groups": [
+              {
+                "title": "Data & Storage",
+                "items": ["SQL Server", "MongoDB"]
+              },
+              {
+                "title": "Processing",
+                "items": ["Stored Procedures", "Scheduled Jobs"]
+              },
+              {
+                "title": "Analytics & Visualization",
+                "items": ["Power BI"]
+              }
+            ]
+          },
+          "lessons": {
+            "summary": "Lessons learned (expand)",
+            "items": [
+              "Effective monitoring needs historical context, not just current status.",
+              "Data quality is a first-class metric, not a byproduct.",
+              "Weighted scoring accelerates operational decision-making.",
+              "Reducing noise is as important as detecting failures."
+            ]
+          }
+        }
+      }
     },
     {
       "slug": "graph-ml/mine-sectorization",

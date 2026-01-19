@@ -53,7 +53,158 @@
       "highlights": [
         "Disene el pipeline de datos y un scoring de salud para CAS, mejorando la visibilidad y las decisiones de mantenimiento."
       ],
-      "tags": ["SQL Server", "MongoDB", "Power BI", "Data Quality", "Health Scoring"]
+      "tags": ["SQL Server", "MongoDB", "Power BI", "Data Quality", "Health Scoring"],
+      "i18n": {
+        "cas": {
+          "hero": {
+            "eyebrow": "Plataforma de monitoreo de salud de dispositivos",
+            "title": "Plataforma de monitoreo de salud CAS",
+            "subtitle": "Monitoreo proactivo y puntuación de salud para dispositivos de evitación de colisiones en flotas industriales.",
+            "chips": [
+              "SQL Server",
+              "MongoDB",
+              "Power BI",
+              "Calidad de datos",
+              "Puntuación de salud"
+            ],
+            "confidentialNote": "Capturas y diagramas están anonimizados por NDA."
+          },
+          "panel": {
+            "focus": {
+              "label": "Enfoque",
+              "value": "Visibilidad en toda la flota"
+            },
+            "outcome": {
+              "label": "Resultado",
+              "value": "Decisiones de mantenimiento proactivo"
+            },
+            "audience": {
+              "label": "Audiencia",
+              "value": "Ingenieros de campo y equipos de soporte"
+            }
+          },
+          "summary": {
+            "title": "Resumen del proyecto",
+            "subtitle": "Vista rápida de la historia central.",
+            "cards": [
+              {
+                "title": "Problema",
+                "body": "Falta de monitoreo centralizado para entender la salud de dispositivos CAS en las flotas."
+              },
+              {
+                "title": "Solución",
+                "body": "Pipelines de datos con puntuación de salud para unificar estado, conectividad e historial."
+              },
+              {
+                "title": "Impacto",
+                "body": "Planificación de mantenimiento proactivo y priorización de dispositivos críticos."
+              },
+              {
+                "title": "Usuarios",
+                "body": "Ingenieros de confiabilidad y equipos de soporte técnico."
+              }
+            ]
+          },
+          "dashboard": {
+            "title": "Vista previa del dashboard",
+            "subtitle": "Dos vistas clave que impulsan decisiones diarias.",
+            "views": [
+              {
+                "alt": "Vista general del dashboard CAS con conectividad y tendencias de salud de dispositivos",
+                "title": "Conectividad y salud de la flota",
+                "bullets": [
+                  "Destaca tendencias de caída y dispositivos en riesgo.",
+                  "Sigue indicadores históricos para detectar problemas recurrentes."
+                ]
+              },
+              {
+                "alt": "Dashboard CAS con variables por dispositivo y puntajes diarios",
+                "title": "Puntuación diaria de salud",
+                "bullets": [
+                  "Clasifica activos por criticidad actual.",
+                  "Guía la programación de mantenimiento y las inspecciones en campo."
+                ]
+              }
+            ]
+          },
+          "architecture": {
+            "title": "Arquitectura de datos y procesamiento",
+            "subtitle": "De la telemetría de dispositivos a la analítica.",
+            "alt": "Diagrama de arquitectura del flujo de datos y procesamiento CAS",
+            "items": [
+              "Fuentes de datos: MongoDB y SQL Server.",
+              "Pipelines programados para ingesta y puntuación diaria.",
+              "Almacenamiento histórico para análisis de tendencias.",
+              "Capa analítica impulsada por Power BI."
+            ]
+          },
+          "highlights": {
+            "title": "Aspectos técnicos clave",
+            "subtitle": "Decisiones de ingeniería que dieron forma a la solución.",
+            "cards": [
+              {
+                "title": "Puntuación de salud ponderada",
+                "body": "70% señales de hardware y 30% indicadores de conectividad para una priorización equilibrada."
+              },
+              {
+                "title": "Historización diaria",
+                "body": "Almacenamiento de series temporales para comparar el estado actual con el comportamiento de largo plazo."
+              },
+              {
+                "title": "Métricas de calidad de datos",
+                "body": "Frescura, completitud y banderas de anomalías embebidas en el pipeline."
+              },
+              {
+                "title": "Ranking de activos críticos",
+                "body": "Priorización automática para equipos de campo y planificación de mantenimiento."
+              },
+              {
+                "title": "Diseño centrado en mantenimiento",
+                "body": "Enfocado en reducir el tiempo de inactividad y guiar acciones preventivas."
+              }
+            ]
+          },
+          "role": {
+            "title": "Rol y responsabilidades",
+            "subtitle": "Responsabilidad sobre datos, analítica y soporte a stakeholders.",
+            "items": [
+              "Diseñé el pipeline de datos de extremo a extremo.",
+              "Modelé y optimicé el almacenamiento en SQL Server.",
+              "Implementé historización y lógica de calidad de datos.",
+              "Definí métricas técnicas y puntuación de salud.",
+              "Construí vistas analíticas para dashboards en Power BI.",
+              "Di soporte a usuarios de ingeniería y mantenimiento."
+            ]
+          },
+          "stack": {
+            "title": "Stack tecnológico",
+            "subtitle": "Agrupado por capas usadas en producción.",
+            "groups": [
+              {
+                "title": "Datos y almacenamiento",
+                "items": ["SQL Server", "MongoDB"]
+              },
+              {
+                "title": "Procesamiento",
+                "items": ["Procedimientos almacenados", "Tareas programadas"]
+              },
+              {
+                "title": "Analítica y visualización",
+                "items": ["Power BI"]
+              }
+            ]
+          },
+          "lessons": {
+            "summary": "Lecciones aprendidas (expandir)",
+            "items": [
+              "El monitoreo efectivo necesita contexto histórico, no solo el estado actual.",
+              "La calidad de datos es una métrica de primera clase, no un subproducto.",
+              "El scoring ponderado acelera la toma de decisiones operativas.",
+              "Reducir el ruido es tan importante como detectar fallas."
+            ]
+          }
+        }
+      }
     },
     {
       "slug": "graph-ml/mine-sectorization",
