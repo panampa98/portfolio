@@ -931,6 +931,22 @@ main {
   color: #ffffff;
 }
 
+.floating-nav.project-home-nav {
+  left: auto;
+  right: 24px;
+  bottom: 24px;
+  transform: none;
+  padding: 10px 14px;
+  gap: 0;
+  width: max-content;
+}
+
+@media (min-width: 1400px) {
+  .floating-nav.project-home-nav {
+    right: 120px;
+  }
+}
+
 .project-meta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

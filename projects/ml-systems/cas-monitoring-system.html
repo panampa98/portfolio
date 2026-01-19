@@ -12,31 +12,17 @@
 <body data-project-slug="ml-systems/cas-monitoring-system" class="cas-project-page">
   <header>
     <div class="container">
-      <div id="language-selector" style="display: flex; justify-content: flex-end; align-items: center;">
-         <label id="language-label">Select Language</label>
-         <button id="en-btn" class="language-button" onclick="setLanguage('en')">EN</button>
-         <button id="es-btn" class="language-button" onclick="setLanguage('es')">ES</button>
-       </div>
+      <div id="language-selector" class="language-selector" role="group" aria-labelledby="language-label">
+         <span id="language-label" class="language-label">Select Language</span>
+         <div class="language-pill">
+           <button id="en-btn" class="language-button" type="button" aria-pressed="false" onclick="setLanguage('en')">EN</button>
+           <button id="es-btn" class="language-button" type="button" aria-pressed="false" onclick="setLanguage('es')">ES</button>
+         </div>
+      </div>
     </div>
   </header>
 
-  <nav class="floating-nav">
-    <div class="nav-item">
-      <a href="../../index.html#about" data-nav-link="../../index.html#about"><i class="fas fa-user"></i></a>
-      <span class="tooltip" data-i18n="navAbout">About Me</span>
-    </div>
-    <div class="nav-item">
-      <a href="../../index.html#projects" data-nav-link="../../index.html#projects"><i class="fas fa-briefcase"></i></a>
-      <span class="tooltip" data-i18n="navProjects">Projects</span>
-    </div>
-    <div class="nav-item">
-      <a href="../../index.html#contact" data-nav-link="../../index.html#contact"><i class="fas fa-envelope"></i></a>
-      <span class="tooltip" data-i18n="navContact">Contact</span>
-    </div>
-  </nav>
-
   <main class="container project-detail cas-project">
-    <a class="back-link" href="../../index.html" data-i18n="backToHome" data-nav-link="../../index.html">Back to home</a>
     <section class="project-hero cas-hero">
       <div class="hero-content">
         <div class="hero-text">
@@ -220,6 +206,15 @@
       </details>
     </section>
   </main>
+
+  <nav class="floating-nav project-home-nav" aria-label="Home">
+    <div class="nav-item">
+      <a href="../../index.html" data-nav-link="../../index.html" aria-label="Back to home">
+        <i class="fas fa-home" aria-hidden="true"></i>
+      </a>
+      <span class="tooltip" data-i18n="backToHome">Back to home</span>
+    </div>
+  </nav>
 
   <footer>
     <p>&copy; 2025 Pold Anampa. All rights reserved.</p>
