@@ -88,6 +88,32 @@ function applyStackIconFallbacks() {
   });
 }
 
+function initRevealObserver() {
+  const revealItems = document.querySelectorAll(".reveal");
+  if (!revealItems.length) {
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealItems.forEach((item) => observer.observe(item));
+}
+
 function renderProjects(projects) {
   const grid = document.getElementById("projects-grid");
   if (!grid) {
@@ -237,4 +263,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const initialLang = getPreferredLang();
   setLanguage(initialLang);
   applyStackIconFallbacks();
+  initRevealObserver();
 });

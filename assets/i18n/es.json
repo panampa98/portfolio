@@ -46,14 +46,14 @@
     },
     {
       "slug": "ml-systems/cas-monitoring-system",
-      "title": "Pipeline y dashboard de monitoreo CAS",
+      "title": "Plataforma de monitoreo de salud CAS",
       "domain": "Mineria / Flota",
-      "problem": "Detectar caidas de servidor, localizar activos y priorizar mantenimiento.",
-      "impact": "Mejor deteccion de caidas de servidor y mantenimiento prioritario.",
+      "problem": "Sin vista centralizada de salud de dispositivos CAS en flota.",
+      "impact": "Mantenimiento proactivo y priorizacion de equipos criticos.",
       "highlights": [
-        "Disene e implemente un pipeline de datos y dashboard de monitoreo para dispositivos CAS, optimizando la deteccion de caidas de servidor, la localizacion de activos y la priorizacion de mantenimiento de vehiculos."
+        "Disene el pipeline de datos y un scoring de salud para CAS, mejorando la visibilidad y las decisiones de mantenimiento."
       ],
-      "tags": ["Python", "ETL", "Dashboards"]
+      "tags": ["SQL Server", "MongoDB", "Power BI", "Data Quality", "Health Scoring"]
     },
     {
       "slug": "graph-ml/mine-sectorization",

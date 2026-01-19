@@ -9,7 +9,7 @@
   <title>DevPold - Project</title>
   <link rel="stylesheet" href="../../../assets/css/styles.css">
 </head>
-<body data-project-slug="ml-systems/cas-monitoring-system">
+<body data-project-slug="ml-systems/cas-monitoring-system" class="cas-project-page">
   <header>
     <div class="container">
       <div id="language-selector" style="display: flex; justify-content: flex-end; align-items: center;">
@@ -35,18 +35,189 @@
     </div>
   </nav>
 
-  <main class="container project-detail">
-    <section class="project-hero">
-      <a class="back-link" href="../../../index.html" data-i18n="backToHome" data-nav-link="../../../index.html">Back to home</a>
-      <h1 id="project-title">Project Title</h1>
-      <p id="project-summary"></p>
-      <ul id="project-tags" class="project-tags"></ul>
+  <main class="container project-detail cas-project">
+    <a class="back-link" href="../../../index.html" data-i18n="backToHome" data-nav-link="../../../index.html">Back to home</a>
+    <section class="project-hero cas-hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">Device Health Monitoring Platform</p>
+          <h1>CAS Device Health Monitoring Platform</h1>
+          <p class="hero-subtitle">Proactive monitoring and health scoring for collision-avoidance devices across industrial fleets.</p>
+          <ul class="chip-list">
+            <li>SQL Server</li>
+            <li>MongoDB</li>
+            <li>Power BI</li>
+            <li>Data Quality</li>
+            <li>Health Scoring</li>
+          </ul>
+          <p class="confidential-note">Screenshots and diagrams are anonymized due to NDA.</p>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-card">
+            <p class="panel-label">Focus</p>
+            <p class="panel-value">Fleet-wide visibility</p>
+            <p class="panel-label">Outcome</p>
+            <p class="panel-value">Proactive maintenance decisions</p>
+            <p class="panel-label">Audience</p>
+            <p class="panel-value">Field engineers and support teams</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="project-highlights">
-      <h2 id="project-details-heading">Project Details</h2>
-      <h3 class="section-label" data-i18n="highlightsLabel">Highlights</h3>
-      <ul id="project-highlights" class="highlight-list"></ul>
+    <section class="section-block reveal project-summary">
+      <div class="section-heading">
+        <h2>Project Summary</h2>
+        <p>Quick scan of the core story.</p>
+      </div>
+      <div class="summary-grid">
+        <article class="summary-card">
+          <h3>Problem</h3>
+          <p>Lack of centralized monitoring to understand CAS device health across fleets.</p>
+        </article>
+        <article class="summary-card">
+          <h3>Solution</h3>
+          <p>Data pipelines with health scoring to unify status, connectivity, and history.</p>
+        </article>
+        <article class="summary-card">
+          <h3>Impact</h3>
+          <p>Proactive maintenance planning and prioritization of critical devices.</p>
+        </article>
+        <article class="summary-card">
+          <h3>Users</h3>
+          <p>Reliability engineers and technical support teams.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal dashboard-preview">
+      <div class="section-heading">
+        <h2>Dashboard Preview</h2>
+        <p>Two key views that drive daily decisions.</p>
+      </div>
+      <div class="preview-grid">
+        <figure class="preview-card">
+          <img src="../../../assets/images/cas-monitoring-system-1.png" alt="CAS dashboard overview with connectivity and device health trends" loading="lazy" decoding="async">
+          <figcaption>
+            <h3>Connectivity and Fleet Health</h3>
+            <ul>
+              <li>Highlights drop-off trends and devices at risk.</li>
+              <li>Tracks historical indicators to spot recurring issues.</li>
+            </ul>
+          </figcaption>
+        </figure>
+        <figure class="preview-card">
+          <img src="../../../assets/images/cas-monitoring-system-2.png" alt="CAS dashboard with per-device variables and daily scores" loading="lazy" decoding="async">
+          <figcaption>
+            <h3>Daily Health Scoring</h3>
+            <ul>
+              <li>Ranks assets by current criticality.</li>
+              <li>Guides maintenance scheduling and field checks.</li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-block reveal architecture-section">
+      <div class="section-heading">
+        <h2>Data &amp; Processing Architecture</h2>
+        <p>From device telemetry to analytics.</p>
+      </div>
+      <div class="architecture-card">
+        <img src="../../../assets/images/cas-monitoring-system-architecture.png" alt="Architecture diagram for CAS data and processing flow" loading="lazy" decoding="async">
+      </div>
+      <ul class="architecture-list">
+        <li>Data sources: MongoDB and SQL Server.</li>
+        <li>Scheduled pipelines for daily ingestion and scoring.</li>
+        <li>Historical storage for trend analysis.</li>
+        <li>Analytics layer powered by Power BI.</li>
+      </ul>
+    </section>
+
+    <section class="section-block reveal technical-highlights">
+      <div class="section-heading">
+        <h2>Key Technical Highlights</h2>
+        <p>Engineering choices that shaped the solution.</p>
+      </div>
+      <div class="highlights-grid">
+        <article class="highlight-card">
+          <h3>Weighted health scoring</h3>
+          <p>70% hardware signals and 30% connectivity indicators for balanced prioritization.</p>
+        </article>
+        <article class="highlight-card">
+          <h3>Daily historization</h3>
+          <p>Time-series storage to compare current status against long-term behavior.</p>
+        </article>
+        <article class="highlight-card">
+          <h3>Data quality metrics</h3>
+          <p>Freshness, completeness, and anomaly flags embedded in the pipeline.</p>
+        </article>
+        <article class="highlight-card">
+          <h3>Critical asset ranking</h3>
+          <p>Automatic prioritization for field teams and maintenance planning.</p>
+        </article>
+        <article class="highlight-card">
+          <h3>Maintenance-first design</h3>
+          <p>Focused on reducing downtime and guiding preventive actions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal role-section">
+      <div class="section-heading">
+        <h2>Role &amp; Responsibilities</h2>
+        <p>Ownership across data, analytics, and stakeholder support.</p>
+      </div>
+      <ul class="role-list">
+        <li>Designed the end-to-end data pipeline.</li>
+        <li>Modeled and optimized SQL Server storage.</li>
+        <li>Implemented historization and data quality logic.</li>
+        <li>Defined technical metrics and health scoring.</li>
+        <li>Built analytical views for Power BI dashboards.</li>
+        <li>Supported engineering and maintenance users.</li>
+      </ul>
+    </section>
+
+    <section class="section-block reveal stack-section">
+      <div class="section-heading">
+        <h2>Tech Stack</h2>
+        <p>Grouped by the layers used in production.</p>
+      </div>
+      <div class="stack-grid">
+        <article class="stack-card">
+          <h3>Data &amp; Storage</h3>
+          <ul>
+            <li>SQL Server</li>
+            <li>MongoDB</li>
+          </ul>
+        </article>
+        <article class="stack-card">
+          <h3>Processing</h3>
+          <ul>
+            <li>Stored Procedures</li>
+            <li>Scheduled Jobs</li>
+          </ul>
+        </article>
+        <article class="stack-card">
+          <h3>Analytics &amp; Visualization</h3>
+          <ul>
+            <li>Power BI</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal lessons-section">
+      <details class="lessons-details">
+        <summary>Lessons learned (expand)</summary>
+        <ul>
+          <li>Effective monitoring needs historical context, not just current status.</li>
+          <li>Data quality is a first-class metric, not a byproduct.</li>
+          <li>Weighted scoring accelerates operational decision-making.</li>
+          <li>Reducing noise is as important as detecting failures.</li>
+        </ul>
+      </details>
     </section>
   </main>
 
@@ -57,4 +228,3 @@
   <script src="../../../assets/js/main.js"></script>
 </body>
 </html>
-

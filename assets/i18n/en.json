@@ -46,14 +46,14 @@
     },
     {
       "slug": "ml-systems/cas-monitoring-system",
-      "title": "CAS Data Pipeline and Monitoring Dashboard",
+      "title": "Device Health Monitoring Platform - CAS",
       "domain": "Mining / Fleet Ops",
-      "problem": "Detect server drops, locate assets, and prioritize maintenance.",
-      "impact": "Optimized detection of server drops and maintenance prioritization.",
+      "problem": "No centralized view of CAS device health across fleets.",
+      "impact": "Enabled proactive maintenance and critical asset prioritization.",
       "highlights": [
-        "Designed and implemented a data pipeline and monitoring dashboard for CAS devices to improve asset visibility and maintenance decisions."
+        "Designed a data pipeline and health scoring model for CAS devices, improving fleet visibility and maintenance decisions."
       ],
-      "tags": ["Python", "ETL", "Dashboards"]
+      "tags": ["SQL Server", "MongoDB", "Power BI", "Data Quality", "Health Scoring"]
     },
     {
       "slug": "graph-ml/mine-sectorization",
