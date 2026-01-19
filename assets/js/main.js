@@ -139,7 +139,7 @@ function renderProjects(projects) {
       : "";
 
     card.innerHTML = `
-      <a class="project-card__link" href="${withLang(`projects/${project.slug}/index.html`, currentLang)}">
+      <a class="project-card__link" href="${withLang(`projects/${project.slug}.html`, currentLang)}">
         <div class="project-card__header">
           <h3>${project.title}</h3>
           ${domainMarkup}
@@ -221,7 +221,7 @@ function applyLabels(labels) {
 
 function getI18nBasePath() {
   if (document.body.dataset.projectSlug) {
-    return "../../../assets/i18n";
+    return "../../assets/i18n";
   }
   return "assets/i18n";
 }
