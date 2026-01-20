@@ -23,28 +23,6 @@
   },
   "projects": [
     {
-      "slug": "anomaly-detection/sensor-failure-gps",
-      "title": "Reverse Sensor Failure Detection",
-      "domain": "Mining / Telematics",
-      "problem": "Detect reverse sensor failures before downtime.",
-      "impact": "90% precision, enabled proactive maintenance.",
-      "highlights": [
-        "Implemented an algorithm to detect reverse sensor failures with 90% accuracy using GPS data and kinematic models."
-      ],
-      "tags": ["Python", "Pandas", "Scikit-learn", "Graph Theory"]
-    },
-    {
-      "slug": "anomaly-detection/data-quality-monitoring",
-      "title": "Near Real-Time Data Quality Monitoring",
-      "domain": "Mining / Data Quality",
-      "problem": "Plan alarm reporting strategies in near real time.",
-      "impact": "Near real-time visibility for alarm reporting decisions.",
-      "highlights": [
-        "Built a data quality monitoring system to plan near real-time alarm reporting strategies."
-      ],
-      "tags": ["Python", "ETL", "Monitoring"]
-    },
-    {
       "slug": "ml-systems/cas-monitoring-system",
       "title": "Device Health Monitoring Platform - CAS",
       "domain": "Mining / Fleet Ops",
@@ -209,6 +187,28 @@
           }
         }
       }
+    },
+    {
+      "slug": "anomaly-detection/sensor-failure-gps",
+      "title": "Reverse Sensor Failure Detection",
+      "domain": "Mining / Telematics",
+      "problem": "Detect reverse sensor failures before downtime.",
+      "impact": "90% precision, enabled proactive maintenance.",
+      "highlights": [
+        "Implemented an algorithm to detect reverse sensor failures with 90% accuracy using GPS data and kinematic models."
+      ],
+      "tags": ["Python", "Pandas", "SQL"]
+    },
+    {
+      "slug": "anomaly-detection/data-quality-monitoring",
+      "title": "Near Real-Time Data Quality Monitoring",
+      "domain": "Mining / Data Quality",
+      "problem": "Plan alarm reporting strategies in near real time.",
+      "impact": "Near real-time visibility for alarm reporting decisions.",
+      "highlights": [
+        "Built a data quality monitoring system to plan near real-time alarm reporting strategies."
+      ],
+      "tags": ["Python", "ETL", "Monitoring"]
     },
     {
       "slug": "graph-ml/mine-sectorization",

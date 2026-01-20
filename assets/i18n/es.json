@@ -3,7 +3,7 @@
     "languageLabel": "Seleccionar idioma",
     "aboutTitle": "Sobre mi",
     "aboutSubtitle": "Machine Learning Aplicado · Sistemas de Analítica",
-    "aboutDescription": "Científico de datos aplicado e ingeniero mecatrínico con experiencia construyendo pipelines de datos, modelos predictivos y sistemas de monitoreo para entornos de alta confiabilidad e intensivos en datos en dominios industriales y financieros.\n\nMe enfoco en diseñar soluciones de analítica escalables que mejoran la eficiencia operativa, la optimización de costos, el monitoreo de riesgos y la toma de decisiones, combinando pensamiento analítico sólido con juicio ingenieril práctico.",
+    "aboutDescription": "Científico de datos aplicado e ingeniero mecatrónico con experiencia construyendo pipelines de datos, modelos predictivos y sistemas de monitoreo para entornos de alta confiabilidad e intensivos en datos en dominios industriales y financieros.\n\nMe enfoco en diseñar soluciones de analítica escalables que mejoran la eficiencia operativa, la optimización de costos, el monitoreo de riesgos y la toma de decisiones, combinando pensamiento analítico sólido con juicio ingenieril práctico.",
     "aboutCta": "↓ Ver proyectos seleccionados",
     "problemLabel": "Problema",
     "impactLabel": "Impacto",
@@ -22,28 +22,6 @@
     "highlightsLabel": "Logros"
   },
   "projects": [
-    {
-      "slug": "anomaly-detection/sensor-failure-gps",
-      "title": "Deteccion de fallas del sensor de reversa",
-      "domain": "Mineria / Telematica",
-      "problem": "Detectar fallas del sensor de reversa antes de la detencion.",
-      "impact": "90% de precision y mantenimiento preventivo.",
-      "highlights": [
-        "Implemente un algoritmo para detectar fallas del sensor de reversa con 90% de precision usando datos GPS y modelos cinematicos."
-      ],
-      "tags": ["Python", "Pandas", "SQL"]
-    },
-    {
-      "slug": "anomaly-detection/data-quality-monitoring",
-      "title": "Monitoreo de calidad de datos casi en tiempo real",
-      "domain": "Mineria / Calidad de datos",
-      "problem": "Planificar reportes de alarmas casi en tiempo real.",
-      "impact": "Visibilidad casi en tiempo real para reportes de alarmas.",
-      "highlights": [
-        "Desarrolle un sistema de monitoreo de calidad de datos para planificar estrategias de reportes de alarmas casi en tiempo real."
-      ],
-      "tags": ["Python", "ETL", "Monitoreo"]
-    },
     {
       "slug": "ml-systems/cas-monitoring-system",
       "title": "Plataforma de monitoreo de salud CAS",
@@ -84,7 +62,7 @@
             },
             "scope": {
               "label": "Alcance de despliegue",
-              "countries": ["Peru", "Brasil", "Chile", "Colombia", "Mexico"]
+              "countries": ["Perú", "Brasil", "Chile", "Colombia", "México"]
             }
           },
           "summary": {
@@ -209,6 +187,28 @@
           }
         }
       }
+    },
+    {
+      "slug": "anomaly-detection/sensor-failure-gps",
+      "title": "Deteccion de fallas del sensor de reversa",
+      "domain": "Mineria / Telematica",
+      "problem": "Detectar fallas del sensor de reversa antes de la detencion.",
+      "impact": "90% de precision y mantenimiento preventivo.",
+      "highlights": [
+        "Implemente un algoritmo para detectar fallas del sensor de reversa con 90% de precision usando datos GPS y modelos cinematicos."
+      ],
+      "tags": ["Python", "Pandas", "SQL"]
+    },
+    {
+      "slug": "anomaly-detection/data-quality-monitoring",
+      "title": "Monitoreo de calidad de datos casi en tiempo real",
+      "domain": "Mineria / Calidad de datos",
+      "problem": "Planificar reportes de alarmas casi en tiempo real.",
+      "impact": "Visibilidad casi en tiempo real para reportes de alarmas.",
+      "highlights": [
+        "Desarrolle un sistema de monitoreo de calidad de datos para planificar estrategias de reportes de alarmas casi en tiempo real."
+      ],
+      "tags": ["Python", "ETL", "Monitoreo"]
     },
     {
       "slug": "graph-ml/mine-sectorization",
