@@ -81,6 +81,10 @@
             "audience": {
               "label": "Audiencia",
               "value": "Ingenieros de campo y equipos de soporte"
+            },
+            "scope": {
+              "label": "Alcance de despliegue",
+              "countries": ["Peru", "Brasil", "Chile", "Colombia", "Mexico"]
             }
           },
           "summary": {
@@ -195,7 +199,7 @@
             ]
           },
           "lessons": {
-            "summary": "Lecciones aprendidas (expandir)",
+            "summary": "Lecciones aprendidas",
             "items": [
               "El monitoreo efectivo necesita contexto histórico, no solo el estado actual.",
               "La calidad de datos es una métrica de primera clase, no un subproducto.",

@@ -81,6 +81,10 @@
             "audience": {
               "label": "Audience",
               "value": "Field engineers and support teams"
+            },
+            "scope": {
+              "label": "Deployment Scope",
+              "countries": ["Peru", "Brazil", "Chile", "Colombia", "Mexico"]
             }
           },
           "summary": {
@@ -195,7 +199,7 @@
             ]
           },
           "lessons": {
-            "summary": "Lessons learned (expand)",
+            "summary": "Lessons learned",
             "items": [
               "Effective monitoring needs historical context, not just current status.",
               "Data quality is a first-class metric, not a byproduct.",

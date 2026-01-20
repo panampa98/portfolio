@@ -18,7 +18,7 @@ html, body {
 body {
   background-color: #1e1e1e;
   color: var(--text-color);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 }
 
 h1, h2, h3, p {
@@ -698,6 +698,33 @@ main {
   font-weight: 600;
 }
 
+.panel-scope {
+  margin: 0 0 0.6rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+}
+
+.panel-scope li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: #f5f7ff;
+  font-weight: 600;
+}
+
+.flag-icon {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
 .section-block {
   display: grid;
   gap: 1.4rem;
@@ -869,19 +896,21 @@ main {
   font-weight: 600;
   letter-spacing: 0.4px;
   list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .lessons-details summary::-webkit-details-marker {
   display: none;
 }
 
-.lessons-details summary::after {
+.lessons-details summary::before {
   content: '+';
-  float: right;
   color: rgba(150, 185, 255, 0.8);
 }
 
-.lessons-details[open] summary::after {
+.lessons-details[open] summary::before {
   content: '-';
 }
 
