@@ -42,7 +42,6 @@
               "SQL Server",
               "MongoDB",
               "Power BI",
-              "Calidad de datos",
               "Puntuación de salud"
             ],
             "confidentialNote": "Capturas y diagramas están anonimizados por NDA."
@@ -83,12 +82,12 @@
               },
               {
                 "title": "Usuarios",
-                "body": "Ingenieros de confiabilidad y equipos de soporte técnico."
+                "body": "Ingenieros de soporte y equipos de soporte técnico."
               }
             ]
           },
           "dashboard": {
-            "title": "Vista previa del dashboard",
+            "title": "Vistas clave del dashboard",
             "subtitle": "Dos vistas clave que impulsan decisiones diarias.",
             "views": [
               {
@@ -110,7 +109,7 @@
             ]
           },
           "architecture": {
-            "title": "Arquitectura de datos y procesamiento",
+            "title": "Arquitectura del pipeline de datos",
             "subtitle": "De la telemetría de dispositivos a la analítica.",
             "alt": "Diagrama de arquitectura del flujo de datos y procesamiento CAS",
             "items": [
@@ -131,10 +130,6 @@
               {
                 "title": "Historización diaria",
                 "body": "Almacenamiento de series temporales para comparar el estado actual con el comportamiento de largo plazo."
-              },
-              {
-                "title": "Métricas de calidad de datos",
-                "body": "Frescura, completitud y banderas de anomalías embebidas en el pipeline."
               },
               {
                 "title": "Ranking de activos críticos",

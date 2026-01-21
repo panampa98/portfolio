@@ -83,12 +83,12 @@
               },
               {
                 "title": "Users",
-                "body": "Reliability engineers and technical support teams."
+                "body": "Support engineers and technical support teams."
               }
             ]
           },
           "dashboard": {
-            "title": "Dashboard Preview",
+            "title": "Key Dashboard Views",
             "subtitle": "Two key views that drive daily decisions.",
             "views": [
               {
@@ -110,7 +110,7 @@
             ]
           },
           "architecture": {
-            "title": "Data & Processing Architecture",
+            "title": "Data Pipeline Architecture",
             "subtitle": "From device telemetry to analytics.",
             "alt": "Architecture diagram for CAS data and processing flow",
             "items": [
@@ -131,10 +131,6 @@
               {
                 "title": "Daily historization",
                 "body": "Time-series storage to compare current status against long-term behavior."
-              },
-              {
-                "title": "Data quality metrics",
-                "body": "Freshness, completeness, and anomaly flags embedded in the pipeline."
               },
               {
                 "title": "Critical asset ranking",
