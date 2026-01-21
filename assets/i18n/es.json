@@ -203,7 +203,162 @@
       "highlights": [
         "Desarrolle un sistema de monitoreo de calidad de datos para planificar estrategias de reportes de alarmas casi en tiempo real."
       ],
-      "tags": ["Python", "ETL", "Monitoreo"]
+      "tags": ["Python", "ETL", "Monitoreo"],
+      "i18n": {
+        "dataQuality": {
+          "hero": {
+            "eyebrow": "Monitoreo de latencia y calidad de datos",
+            "title": "Monitoreo de calidad de datos casi en tiempo real",
+            "subtitle": "Analisis de latencia entre MongoDB y SQL Server para definir frecuencia de reporte, detectar cuellos de botella y guiar mejoras de red y flujo de datos.",
+            "chips": [
+              "Python",
+              "MongoDB",
+              "SQL Server",
+              "Power BI",
+              "Monitoreo"
+            ],
+            "confidentialNote": "Capturas y diagramas estan anonimizados por NDA."
+          },
+          "panel": {
+            "focus": {
+              "label": "Enfoque",
+              "value": "Latencia de datos (minutos a dias) y deteccion de cuellos de botella"
+            },
+            "outcome": {
+              "label": "Resultado",
+              "value": "Ventana de reporte confiable por cliente + mejoras accionables"
+            },
+            "audience": {
+              "label": "Audiencia",
+              "value": "Ventas, soporte remoto y stakeholders que definen SLAs de reporte"
+            },
+            "scope": {
+              "label": "Alcance de despliegue",
+              "countries": ["Peru", "Brasil", "Chile", "Colombia", "Mexico"]
+            }
+          },
+          "summary": {
+            "title": "Resumen del proyecto",
+            "subtitle": "Vista rapida de la historia central.",
+            "cards": [
+              {
+                "title": "Problema",
+                "body": "Se proponian estrategias de reporte sin conocer el retraso real de extremo a extremo, lo que arriesgaba promesas irrealistas de casi tiempo real."
+              },
+              {
+                "title": "Solucion",
+                "body": "Medi latencia en MongoDB y SQL Server, clasifique retrasos y detecte cuellos de botella por fuente y cliente."
+              },
+              {
+                "title": "Impacto",
+                "body": "Defini frecuencia de reporte realista por cliente y valide mejoras tras cambios en el flujo de datos."
+              },
+              {
+                "title": "Usuarios",
+                "body": "Equipos de ventas y soporte remoto usando el dashboard de monitoreo."
+              }
+            ]
+          },
+          "dashboard": {
+            "title": "Vistas clave del dashboard",
+            "subtitle": "Dos vistas para definir frecuencia de reporte e identificar cuellos de botella.",
+            "views": [
+              {
+                "alt": "Vista resumen de Power BI con latencia por fuente y colores de criticidad",
+                "title": "Resumen de latencia por fuente",
+                "bullets": [
+                  "Agrega latencia por fuente para identificar cuellos de botella.",
+                  "Buckets de criticidad para definir la cadencia de reporte.",
+                  "KPI de porcentaje de datos dentro de 30 minutos.",
+                  "Escala de color para retraso aceptable, medio y alto."
+                ]
+              },
+              {
+                "alt": "Vista detalle de Power BI con latencia diaria por vehiculo y drill-down",
+                "title": "Detalle diario por vehiculo",
+                "bullets": [
+                  "Drill-down por vehiculo para detectar patrones de retraso.",
+                  "Promedio diario de latencia para validar mejoras.",
+                  "Distingue cuellos sistemicos vs casos aislados."
+                ]
+              }
+            ]
+          },
+          "architecture": {
+            "title": "Arquitectura del pipeline de datos",
+            "subtitle": "De las fuentes operativas al analisis de latencia y monitoreo.",
+            "alt": "Diagrama de arquitectura para monitoreo de latencia con MongoDB, SQL Server, Python, CSV y Power BI",
+            "items": [
+              "Fuentes de datos: MongoDB y SQL Server.",
+              "En SQL Server se incluyeron tabla de alarmas y tabla final de detalles.",
+              "ETL en Python para calcular latencia y generar outputs por cliente.",
+              "Salidas en CSV cargadas en Power BI.",
+              "Refresh en Power BI usando carpeta de CSV por cliente."
+            ]
+          },
+          "highlights": {
+            "title": "Aspectos tecnicos clave",
+            "subtitle": "Decisiones de ingenieria que hicieron el analisis accionable.",
+            "cards": [
+              {
+                "title": "Medicion end-to-end de latencia",
+                "body": "Calculo de deltas en minutos entre multiples saltos y etapas de SQL Server."
+              },
+              {
+                "title": "Buckets de criticidad + guia de SLA",
+                "body": "Mapeo de latencia a rangos para recomendar frecuencia de reporte realista."
+              },
+              {
+                "title": "Aislamiento de cuellos por fuente",
+                "body": "Separacion de retrasos por fuente y etapa para identificar el cuello real."
+              },
+              {
+                "title": "Dashboard operativo",
+                "body": "Vistas en Power BI con severidad por color y drill-down para soporte y ventas."
+              }
+            ]
+          },
+          "role": {
+            "title": "Rol y responsabilidades",
+            "subtitle": "Responsabilidad en analisis, pipeline, dashboarding y habilitacion.",
+            "items": [
+              "Defini objetivo y metodologia para determinar ventana de reporte confiable.",
+              "Medi retrasos en MongoDB y SQL Server, incluyendo alarmas y detalles.",
+              "Construi logica en Python para calcular latencia y datasets por cliente.",
+              "Disene dashboards en Power BI con criticidad por color.",
+              "Apoye conversaciones con stakeholders para mejoras de red y flujo.",
+              "Entrene a soporte remoto para interpretar la herramienta."
+            ]
+          },
+          "stack": {
+            "title": "Stack tecnologico",
+            "subtitle": "Agrupado por capas usadas en produccion.",
+            "groups": [
+              {
+                "title": "Datos y almacenamiento",
+                "items": ["MongoDB", "SQL Server"]
+              },
+              {
+                "title": "Procesamiento / ETL",
+                "items": ["Python", "Exportaciones CSV"]
+              },
+              {
+                "title": "Analitica y visualizacion",
+                "items": ["Power BI"]
+              }
+            ]
+          },
+          "lessons": {
+            "summary": "Lecciones aprendidas",
+            "items": [
+              "El casi tiempo real debe basarse en distribuciones observadas, no suposiciones.",
+              "Separar latencia por fuente y etapa vuelve accionables los cuellos.",
+              "Umbrales simples aceleran decisiones de SLA y expectativas.",
+              "El monitoreo prueba mejoras despues de cambios del cliente."
+            ]
+          }
+        }
+      }
     },
     {
       "slug": "graph-ml/mine-sectorization",

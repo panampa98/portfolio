@@ -10,28 +10,224 @@
   <link rel="stylesheet" href="../../assets/css/styles.css">
   <link rel="stylesheet" href="../../assets/css/projects.css">
 </head>
-<body data-project-slug="anomaly-detection/data-quality-monitoring">
+<body data-project-slug="anomaly-detection/data-quality-monitoring" class="cas-project-page">
   <header>
     <div class="container">
-      <div id="language-selector" style="display: flex; justify-content: flex-end; align-items: center;">
-         <label id="language-label">Select Language</label>
-         <button id="en-btn" class="language-button" onclick="setLanguage('en')">EN</button>
-         <button id="es-btn" class="language-button" onclick="setLanguage('es')">ES</button>
-       </div>
+      <div id="language-selector" class="language-selector" role="group" aria-labelledby="language-label">
+        <span id="language-label" class="language-label">Select Language</span>
+        <div class="language-pill">
+          <button id="en-btn" class="language-button" type="button" aria-pressed="false" onclick="setLanguage('en')">EN</button>
+          <button id="es-btn" class="language-button" type="button" aria-pressed="false" onclick="setLanguage('es')">ES</button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="container project-detail">
-    <section class="project-hero">
-      <h1 id="project-title">Project Title</h1>
-      <p id="project-summary"></p>
-      <ul id="project-tags" class="project-tags"></ul>
+  <main class="container project-detail cas-project">
+    <section class="project-hero cas-hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow" data-i18n="dataQuality.hero.eyebrow">Data Latency &amp; Quality Monitoring</p>
+          <h1 data-i18n="dataQuality.hero.title">Near Real-Time Data Quality Monitoring</h1>
+          <p class="hero-subtitle" data-i18n="dataQuality.hero.subtitle">Latency analysis across MongoDB and SQL Server to define reliable reporting frequency, detect bottlenecks, and guide network/data-flow improvements.</p>
+          <ul class="chip-list">
+            <li data-i18n="dataQuality.hero.chips.0">Python</li>
+            <li data-i18n="dataQuality.hero.chips.1">MongoDB</li>
+            <li data-i18n="dataQuality.hero.chips.2">SQL Server</li>
+            <li data-i18n="dataQuality.hero.chips.3">Power BI</li>
+            <li data-i18n="dataQuality.hero.chips.4">Monitoring</li>
+          </ul>
+          <p class="confidential-note" data-i18n="dataQuality.hero.confidentialNote">Screenshots and diagrams are anonymized due to NDA.</p>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-card">
+            <p class="panel-label" data-i18n="dataQuality.panel.focus.label">Focus</p>
+            <p class="panel-value" data-i18n="dataQuality.panel.focus.value">Data latency (minutes to days) and bottleneck detection</p>
+            <p class="panel-label" data-i18n="dataQuality.panel.outcome.label">Outcome</p>
+            <p class="panel-value" data-i18n="dataQuality.panel.outcome.value">Reliable reporting window per client + actionable improvements</p>
+            <p class="panel-label" data-i18n="dataQuality.panel.audience.label">Audience</p>
+            <p class="panel-value" data-i18n="dataQuality.panel.audience.value">Sales, remote support engineers, and stakeholders defining reporting SLAs</p>
+            <p class="panel-label" data-i18n="dataQuality.panel.scope.label">Deployment Scope</p>
+            <ul class="panel-scope">
+              <li>
+                <img src="../../assets/icons/flags/peru.svg" alt="" aria-hidden="true" class="flag-icon">
+                <span data-i18n="dataQuality.panel.scope.countries.0">Peru</span>
+              </li>
+              <li>
+                <img src="../../assets/icons/flags/brazil.svg" alt="" aria-hidden="true" class="flag-icon">
+                <span data-i18n="dataQuality.panel.scope.countries.1">Brazil</span>
+              </li>
+              <li>
+                <img src="../../assets/icons/flags/chile.svg" alt="" aria-hidden="true" class="flag-icon">
+                <span data-i18n="dataQuality.panel.scope.countries.2">Chile</span>
+              </li>
+              <li>
+                <img src="../../assets/icons/flags/colombia.svg" alt="" aria-hidden="true" class="flag-icon">
+                <span data-i18n="dataQuality.panel.scope.countries.3">Colombia</span>
+              </li>
+              <li>
+                <img src="../../assets/icons/flags/mexico.svg" alt="" aria-hidden="true" class="flag-icon">
+                <span data-i18n="dataQuality.panel.scope.countries.4">Mexico</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="project-highlights">
-      <h2 id="project-details-heading">Project Details</h2>
-      <h3 class="section-label" data-i18n="highlightsLabel">Highlights</h3>
-      <ul id="project-highlights" class="highlight-list"></ul>
+    <section class="section-block reveal project-summary">
+      <div class="section-heading">
+        <h2 data-i18n="dataQuality.summary.title">Project Summary</h2>
+        <p data-i18n="dataQuality.summary.subtitle">Quick scan of the core story.</p>
+      </div>
+      <div class="summary-grid">
+        <article class="summary-card">
+          <h3 data-i18n="dataQuality.summary.cards.0.title">Problem</h3>
+          <p data-i18n="dataQuality.summary.cards.0.body">Reporting strategies were being proposed without knowing the true end-to-end delay of data arrival, risking unrealistic near real-time promises.</p>
+        </article>
+        <article class="summary-card">
+          <h3 data-i18n="dataQuality.summary.cards.1.title">Solution</h3>
+          <p data-i18n="dataQuality.summary.cards.1.body">Measured latency across MongoDB and SQL Server, categorized delays, and pinpointed bottlenecks by source and client.</p>
+        </article>
+        <article class="summary-card">
+          <h3 data-i18n="dataQuality.summary.cards.2.title">Impact</h3>
+          <p data-i18n="dataQuality.summary.cards.2.body">Enabled realistic reporting frequency per client and validated improvements after data-flow changes.</p>
+        </article>
+        <article class="summary-card">
+          <h3 data-i18n="dataQuality.summary.cards.3.title">Users</h3>
+          <p data-i18n="dataQuality.summary.cards.3.body">Sales teams and remote support engineers using the monitoring dashboard.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal dashboard-preview">
+      <div class="section-heading">
+        <h2 data-i18n="dataQuality.dashboard.title">Key Dashboard Views</h2>
+        <p data-i18n="dataQuality.dashboard.subtitle">Two views used to define reporting frequency and identify bottlenecks.</p>
+      </div>
+      <div class="preview-grid">
+        <figure class="preview-card">
+          <img src="../../assets/images/data-quality-monitoring-1.png" alt="Power BI summary view showing data latency by source with criticality colors and distribution buckets" loading="lazy" decoding="async" data-i18n-attr="alt:dataQuality.dashboard.views.0.alt">
+          <figcaption>
+            <h3 data-i18n="dataQuality.dashboard.views.0.title">Latency Summary by Data Source</h3>
+            <ul>
+              <li data-i18n="dataQuality.dashboard.views.0.bullets.0">Aggregates latency per source to quickly identify bottlenecks.</li>
+              <li data-i18n="dataQuality.dashboard.views.0.bullets.1">Criticality buckets to define feasible reporting cadence.</li>
+              <li data-i18n="dataQuality.dashboard.views.0.bullets.2">KPI for percent of data arriving within 30 minutes.</li>
+              <li data-i18n="dataQuality.dashboard.views.0.bullets.3">Color scale for acceptable, medium, and high delay.</li>
+            </ul>
+          </figcaption>
+        </figure>
+        <figure class="preview-card">
+          <img src="../../assets/images/data-quality-monitoring-2.png" alt="Power BI detail view showing per-vehicle daily average latency and drill-down analysis" loading="lazy" decoding="async" data-i18n-attr="alt:dataQuality.dashboard.views.1.alt">
+          <figcaption>
+            <h3 data-i18n="dataQuality.dashboard.views.1.title">Per-Vehicle Daily Latency Detail</h3>
+            <ul>
+              <li data-i18n="dataQuality.dashboard.views.1.bullets.0">Drill-down to individual vehicles to spot delay patterns.</li>
+              <li data-i18n="dataQuality.dashboard.views.1.bullets.1">Daily average latency tracking to validate improvements.</li>
+              <li data-i18n="dataQuality.dashboard.views.1.bullets.2">Distinguishes systemic bottlenecks vs isolated connectivity.</li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-block reveal architecture-section">
+      <div class="section-heading">
+        <h2 data-i18n="dataQuality.architecture.title">Data Pipeline Architecture</h2>
+        <p data-i18n="dataQuality.architecture.subtitle">From operational data sources to latency analysis and monitoring.</p>
+      </div>
+      <div class="architecture-card">
+        <img src="../../assets/images/data-quality-monitoring-architecture.png" alt="Architecture diagram for data latency monitoring pipeline using MongoDB, SQL Server, Python processing, CSV outputs, and Power BI dashboards" loading="lazy" decoding="async" data-i18n-attr="alt:dataQuality.architecture.alt">
+      </div>
+      <ul class="architecture-list">
+        <li data-i18n="dataQuality.architecture.items.0">Data sources: MongoDB and SQL Server.</li>
+        <li data-i18n="dataQuality.architecture.items.1">SQL Server sources included both the alarm events table and the final alarm details table.</li>
+        <li data-i18n="dataQuality.architecture.items.2">Python ETL to compute latency metrics and generate per-client outputs.</li>
+        <li data-i18n="dataQuality.architecture.items.3">Outputs exported as CSV files and loaded into Power BI.</li>
+        <li data-i18n="dataQuality.architecture.items.4">Power BI refresh driven by loading a client CSV folder.</li>
+      </ul>
+    </section>
+
+    <section class="section-block reveal technical-highlights">
+      <div class="section-heading">
+        <h2 data-i18n="dataQuality.highlights.title">Key Technical Highlights</h2>
+        <p data-i18n="dataQuality.highlights.subtitle">Engineering choices that made the analysis actionable across clients.</p>
+      </div>
+      <div class="highlights-grid">
+        <article class="highlight-card">
+          <h3 data-i18n="dataQuality.highlights.cards.0.title">End-to-end latency measurement</h3>
+          <p data-i18n="dataQuality.highlights.cards.0.body">Computed time deltas in minutes across multiple hops and SQL Server stages.</p>
+        </article>
+        <article class="highlight-card">
+          <h3 data-i18n="dataQuality.highlights.cards.1.title">Criticality buckets + SLA guidance</h3>
+          <p data-i18n="dataQuality.highlights.cards.1.body">Mapped latency into decision buckets to recommend realistic reporting frequency per client.</p>
+        </article>
+        <article class="highlight-card">
+          <h3 data-i18n="dataQuality.highlights.cards.2.title">Source bottleneck isolation</h3>
+          <p data-i18n="dataQuality.highlights.cards.2.body">Separated delays by data source and table stage to pinpoint bottlenecks.</p>
+        </article>
+        <article class="highlight-card">
+          <h3 data-i18n="dataQuality.highlights.cards.3.title">Operational dashboarding</h3>
+          <p data-i18n="dataQuality.highlights.cards.3.body">Power BI drill-down views enabled sales and support to act quickly.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal role-section">
+      <div class="section-heading">
+        <h2 data-i18n="dataQuality.role.title">Role &amp; Responsibilities</h2>
+        <p data-i18n="dataQuality.role.subtitle">Ownership across analysis, pipeline, dashboarding, and enablement.</p>
+      </div>
+      <ul class="role-list">
+        <li data-i18n="dataQuality.role.items.0">Defined the objective and methodology to determine a reliable reporting window.</li>
+        <li data-i18n="dataQuality.role.items.1">Measured delays across MongoDB and SQL Server sources.</li>
+        <li data-i18n="dataQuality.role.items.2">Built Python extraction and processing logic to compute latency metrics.</li>
+        <li data-i18n="dataQuality.role.items.3">Designed Power BI dashboards with criticality coloring.</li>
+        <li data-i18n="dataQuality.role.items.4">Supported stakeholder discussions to justify network improvements.</li>
+        <li data-i18n="dataQuality.role.items.5">Trained remote support engineers to interpret the monitoring tool.</li>
+      </ul>
+    </section>
+
+    <section class="section-block reveal stack-section">
+      <div class="section-heading">
+        <h2 data-i18n="dataQuality.stack.title">Tech Stack</h2>
+        <p data-i18n="dataQuality.stack.subtitle">Grouped by the layers used in production.</p>
+      </div>
+      <div class="stack-grid">
+        <article class="stack-card">
+          <h3 data-i18n="dataQuality.stack.groups.0.title">Data &amp; Storage</h3>
+          <ul>
+            <li data-i18n="dataQuality.stack.groups.0.items.0">MongoDB</li>
+            <li data-i18n="dataQuality.stack.groups.0.items.1">SQL Server</li>
+          </ul>
+        </article>
+        <article class="stack-card">
+          <h3 data-i18n="dataQuality.stack.groups.1.title">Processing / ETL</h3>
+          <ul>
+            <li data-i18n="dataQuality.stack.groups.1.items.0">Python</li>
+            <li data-i18n="dataQuality.stack.groups.1.items.1">CSV Exports</li>
+          </ul>
+        </article>
+        <article class="stack-card">
+          <h3 data-i18n="dataQuality.stack.groups.2.title">Analytics &amp; Visualization</h3>
+          <ul>
+            <li data-i18n="dataQuality.stack.groups.2.items.0">Power BI</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal lessons-section">
+      <details class="lessons-details">
+        <summary data-i18n="dataQuality.lessons.summary">Lessons learned</summary>
+        <ul>
+          <li data-i18n="dataQuality.lessons.items.0">Near real-time reporting must be grounded in observed data arrival distributions.</li>
+          <li data-i18n="dataQuality.lessons.items.1">Separating latency by source and processing stage makes bottlenecks actionable.</li>
+          <li data-i18n="dataQuality.lessons.items.2">Simple thresholds accelerate decisions for SLAs and expectations.</li>
+          <li data-i18n="dataQuality.lessons.items.3">Monitoring enables proof of improvement after client-side changes.</li>
+        </ul>
+      </details>
     </section>
   </main>
 
