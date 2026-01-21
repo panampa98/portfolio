@@ -24,14 +24,14 @@
   "projects": [
     {
       "slug": "ml-systems/cas-monitoring-system",
-      "title": "Plataforma de monitoreo de salud CAS",
+      "title": "Sistema de monitoreo de salud de dispositivos Anticolisión",
       "domain": "Mineria / Flota",
       "problem": "Sin vista centralizada de salud de dispositivos CAS en flota.",
       "impact": "Mantenimiento proactivo y priorizacion de equipos criticos.",
       "highlights": [
         "Disene el pipeline de datos y un scoring de salud para CAS, mejorando la visibilidad y las decisiones de mantenimiento."
       ],
-      "tags": ["SQL Server", "MongoDB", "Power BI", "Data Quality", "Health Scoring"],
+      "tags": ["SQL Server", "MongoDB", "Power BI", "Health Scoring"],
       "i18n": {
         "cas": {
           "hero": {
