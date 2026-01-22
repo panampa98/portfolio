@@ -219,49 +219,49 @@
     },
     {
       "slug": "anomaly-detection/data-quality-monitoring",
-      "title": "Near Real-Time Data Quality Monitoring (Data Latency Analysis)",
+      "title": "Data Latency & Reporting Feasibility Analysis",
       "domain": "Mining / Data Quality",
-      "problem": "Unclear end-to-end data latency across sources, making near real-time alarm reporting unreliable and hard to scope for each client.",
-      "impact": "Defined realistic reporting frequency per client, identified bottlenecks, and enabled measurable network/data-flow improvements (e.g., reduced extreme delays from ~5 days to ~1 day).",
+      "problem": "Unclear data arrival timing across sources when defining reporting frequency.",
+      "impact": "Enabled realistic reporting cadence and informed targeted improvements when needed.",
       "highlights": [
-        "Analyzed data latency (minutes to days) across MongoDB and SQL Server sources to determine the optimal, reliable reporting window.",
-        "Identified bottlenecks per source (alarm header vs alarm details in SQL Server) and supported client-side improvements, validating progress over time with monitoring.",
-        "Built a Power BI dashboard to classify latency criticality (green/yellow/red) and drill down from source-level summary to per-vehicle daily latency."
+        "Assessed data latency across MongoDB, SQL Server alarm data, and GPS sources to define feasible near real-time reporting.",
+        "Supported operational and commercial decisions by identifying optimal reporting windows per client.",
+        "Enabled follow-up improvements and validated progress through repeated, on-demand analysis."
       ],
       "tags": [
         "Python",
         "MongoDB",
         "SQL Server",
         "Power BI",
-        "Monitoring"
+        "Data Quality",
+        "Latency Analysis"
       ],
       "i18n": {
         "dataQuality": {
           "hero": {
-            "eyebrow": "Data Latency & Quality Monitoring",
-            "title": "Near Real-Time Data Quality Monitoring",
-            "subtitle": "Latency analysis across MongoDB and SQL Server to define reliable reporting frequency, detect bottlenecks, and guide network/data-flow improvements.",
+            "eyebrow": "Data Latency Assessment",
+            "title": "Data Latency & Reporting Feasibility Analysis",
+            "subtitle": "On-demand analysis to evaluate data arrival timing and define feasible reporting frequency across clients.",
             "chips": [
               "Python",
               "MongoDB",
               "SQL Server",
-              "Power BI",
-              "Monitoring"
+              "Power BI"
             ],
             "confidentialNote": "Screenshots and diagrams are anonymized due to NDA."
           },
           "panel": {
             "focus": {
               "label": "Focus",
-              "value": "Data latency (minutes → days) and bottleneck detection"
+              "value": "Data arrival latency and reporting feasibility"
             },
             "outcome": {
               "label": "Outcome",
-              "value": "Reliable reporting window per client + actionable improvements"
+              "value": "Defined optimal reporting cadence per client"
             },
             "audience": {
               "label": "Audience",
-              "value": "Sales, remote support engineers, and stakeholders defining reporting SLAs"
+              "value": "Remote support teams and contract administrators"
             },
             "scope": {
               "label": "Deployment Scope",
@@ -276,117 +276,115 @@
           },
           "summary": {
             "title": "Project Summary",
-            "subtitle": "Quick scan of the core story.",
+            "subtitle": "Why and how reporting cadence was defined.",
             "cards": [
               {
                 "title": "Problem",
-                "body": "Reporting strategies were being proposed without knowing the true end-to-end delay of data arrival, risking unrealistic near real-time promises."
+                "body": "Reporting frequency needed to be aligned with actual data arrival behavior across systems."
               },
               {
                 "title": "Solution",
-                "body": "Measured latency across MongoDB and SQL Server (alarm table + final alarm details table), categorized delays, and pinpointed bottlenecks by source and client."
+                "body": "Performed on-demand latency analysis across MongoDB, complementary SQL Server alarm tables, and GPS data."
               },
               {
                 "title": "Impact",
-                "body": "Enabled realistic reporting frequency per client (2 minutes to multiple hours/days). Supported client conversations to improve networks/data flow and validated improvements (e.g., ~5 days → ~1 day)."
+                "body": "Provided a clear reference for near real-time reporting and guidance on when improvements were required."
               },
               {
                 "title": "Users",
-                "body": "Sales teams to define feasible offerings, and remote support engineers trained to operate and interpret the monitoring dashboard."
+                "body": "Remote support engineers and contract administrators responsible for operational monitoring."
               }
             ]
           },
           "dashboard": {
             "title": "Key Dashboard Views",
-            "subtitle": "Two views used to define reporting frequency and identify bottlenecks.",
+            "subtitle": "Visual tools used to assess reporting feasibility.",
             "views": [
               {
-                "alt": "Power BI summary view showing data latency by source with criticality colors and distribution buckets",
-                "title": "Latency Summary by Data Source",
+                "alt": "Power BI overview showing latency distribution by data source with color-coded criticality",
+                "title": "Latency Overview by Source",
                 "bullets": [
-                  "Aggregates latency per source to quickly identify bottlenecks.",
-                  "Criticality buckets (e.g., 2 min, 30 min, 1 h, 4 h, 1 day, >5 days) to define feasible reporting cadence.",
-                  "Includes KPI for % of data arriving within 30 minutes (target threshold ~80% for acceptable near real-time reporting).",
-                  "Color scale: green (≤30 min acceptable), yellow (medium delay), red (high delay)."
+                  "Aggregated latency by data source to quickly understand typical arrival times.",
+                  "Color scale indicating acceptable, moderate, and high delay ranges.",
+                  "Used to define a realistic reporting window without manual calculations."
                 ]
               },
               {
-                "alt": "Power BI detail view showing per-vehicle daily average latency and drill-down analysis",
-                "title": "Per-Vehicle Daily Latency Detail",
+                "alt": "Power BI detail view showing per-vehicle average daily latency",
+                "title": "Per-Asset Latency Detail",
                 "bullets": [
-                  "Drill-down to individual vehicles to spot client-specific and asset-specific delay patterns.",
-                  "Daily average latency tracking to validate improvements over time after network/data-flow changes.",
-                  "Helps distinguish systemic source bottlenecks vs isolated connectivity cases."
+                  "Drill-down to vehicle-level latency for deeper operational insight.",
+                  "Helps distinguish systemic behavior from isolated cases.",
+                  "Useful for validating improvements after network or process changes."
                 ]
               }
             ]
           },
           "architecture": {
-            "title": "Data Pipeline Architecture",
-            "subtitle": "From operational data sources to latency analysis and monitoring.",
-            "alt": "Architecture diagram for data latency monitoring pipeline using MongoDB, SQL Server, Python processing, CSV outputs, and Power BI dashboards",
+            "title": "Data Analysis Architecture",
+            "subtitle": "Sources and processing used for latency assessment.",
+            "alt": "Architecture diagram for latency analysis using MongoDB, SQL Server, GPS data, Python processing, and Power BI",
             "items": [
-              "Data sources: MongoDB and SQL Server.",
-              "SQL Server sources included both the alarm events table and the final alarm details table to measure end-to-end delay.",
-              "Python ETL to extract and compute latency metrics (minutes to days), generate per-client outputs.",
-              "Outputs exported as CSV files and loaded into Power BI.",
-              "Power BI refresh driven by loading a client CSV folder, enabling fast switching and updates."
+              "Data sources included MongoDB, SQL Server alarm data (complementary tables), and GPS records.",
+              "Processing in Python and SQL Server for calculating latency metrics.",
+              "Results exported as CSV files for flexible, client-specific analysis.",
+              "Power BI dashboards loaded directly from CSV folders for rapid updates."
             ]
           },
           "highlights": {
             "title": "Key Technical Highlights",
-            "subtitle": "Engineering choices that made the analysis actionable across clients.",
+            "subtitle": "What made the analysis practical and reusable.",
             "cards": [
               {
-                "title": "End-to-end latency measurement",
-                "body": "Computed time deltas in minutes across multiple hops (MongoDB → SQL Server) and across SQL Server stages (alarm record vs final alarm details)."
+                "title": "On-demand assessment",
+                "body": "Designed to be executed once or repeated as needed, rather than continuous monitoring."
               },
               {
-                "title": "Criticality buckets + SLA guidance",
-                "body": "Mapped latency into decision buckets (2 min, 30 min, 1 h, 4 h, 1 day, >5 days) to recommend realistic reporting frequency per client."
+                "title": "Latency bucketing",
+                "body": "Grouped delays into intuitive ranges (minutes to days) to support decision-making."
               },
               {
-                "title": "Source bottleneck isolation",
-                "body": "Separated delays by data source and table stage to identify whether the bottleneck was upstream ingestion, processing, or network constraints."
+                "title": "Multi-source coverage",
+                "body": "Considered MongoDB, SQL Server alarm data, and GPS sources for a complete view."
               },
               {
-                "title": "Operational dashboarding",
-                "body": "Power BI views with color-based severity and drill-down (source → vehicle) enabled support and sales to act without manual recalculation."
+                "title": "Operational enablement",
+                "body": "Dashboard visuals allowed non-technical users to interpret results quickly."
               }
             ]
           },
           "role": {
             "title": "Role & Responsibilities",
-            "subtitle": "Ownership across analysis, pipeline, dashboarding, and enablement.",
+            "subtitle": "Collaboration across analysis, tooling, and enablement.",
             "items": [
-              "Defined the objective and methodology to determine a reliable reporting window based on observed latency distributions.",
-              "Explored and measured delays across MongoDB and SQL Server sources, including alarm and alarm-details tables.",
-              "Built Python extraction and processing logic to compute latency metrics and generate client-ready datasets.",
-              "Designed and implemented Power BI dashboards (summary + per-vehicle drill-down) with criticality coloring.",
-              "Supported stakeholder discussions (sales + client coordination) to request and justify network/data-flow improvements.",
-              "Trained remote support engineers to use and interpret the monitoring tool."
+              "Defined the methodology to assess data latency and reporting feasibility.",
+              "Collaborated with remote support teams to extract and validate data.",
+              "Implemented Python processing and Power BI dashboards.",
+              "Trained remote support personnel to perform future analyses independently.",
+              "Supported contract administrators with data-driven reporting guidance."
             ]
           },
           "stack": {
             "title": "Tech Stack",
-            "subtitle": "Grouped by the layers used in production.",
+            "subtitle": "Tools used across the workflow.",
             "groups": [
               {
-                "title": "Data & Storage",
+                "title": "Data Sources",
                 "items": [
                   "MongoDB",
-                  "SQL Server"
+                  "SQL Server",
+                  "GPS Data"
                 ]
               },
               {
-                "title": "Processing / ETL",
+                "title": "Processing",
                 "items": [
                   "Python",
-                  "CSV Exports"
+                  "CSV"
                 ]
               },
               {
-                "title": "Analytics & Visualization",
+                "title": "Visualization",
                 "items": [
                   "Power BI"
                 ]
@@ -396,10 +394,10 @@
           "lessons": {
             "summary": "Lessons learned",
             "items": [
-              "Near real-time reporting must be grounded in observed data arrival distributions, not assumptions.",
-              "Separating latency by source and processing stage makes bottlenecks actionable (not just visible).",
-              "Simple thresholds (e.g., % within 30 minutes) accelerate decisions for SLAs and go-to-market expectations.",
-              "Monitoring enables proof of improvement after client-side changes, strengthening collaboration and trust."
+              "Reporting frequency should reflect observed data arrival, not assumptions.",
+              "A single, well-executed analysis is often sufficient to define reporting cadence.",
+              "Clear visuals help align technical findings with operational and contractual decisions.",
+              "Knowledge transfer ensures sustainability beyond the initial analysis."
             ]
           }
         }

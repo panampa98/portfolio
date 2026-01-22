@@ -107,7 +107,9 @@
       </div>
       <div class="preview-grid">
         <figure class="preview-card">
-          <img src="../../assets/images/data-quality-monitoring-1.png" alt="Power BI summary view showing data latency by source with criticality colors and distribution buckets" loading="lazy" decoding="async" data-i18n-attr="alt:dataQuality.dashboard.views.0.alt">
+          <div class="image-rotator" data-rotator="../../assets/images/source-latency.png,../../assets/images/source-latency-history.png" data-interval="2000">
+            <img src="../../assets/images/source-latency.png" alt="Power BI summary view showing data latency by source with criticality colors and distribution buckets" loading="lazy" decoding="async" data-i18n-attr="alt:dataQuality.dashboard.views.0.alt">
+          </div>
           <figcaption>
             <h3 data-i18n="dataQuality.dashboard.views.0.title">Latency Summary by Data Source</h3>
             <ul>
@@ -119,7 +121,7 @@
           </figcaption>
         </figure>
         <figure class="preview-card">
-          <img src="../../assets/images/data-quality-monitoring-2.png" alt="Power BI detail view showing per-vehicle daily average latency and drill-down analysis" loading="lazy" decoding="async" data-i18n-attr="alt:dataQuality.dashboard.views.1.alt">
+          <img src="../../assets/images/latency-by-equipment.png" alt="Power BI detail view showing per-vehicle daily average latency and drill-down analysis" loading="lazy" decoding="async" data-i18n-attr="alt:dataQuality.dashboard.views.1.alt">
           <figcaption>
             <h3 data-i18n="dataQuality.dashboard.views.1.title">Per-Vehicle Daily Latency Detail</h3>
             <ul>
@@ -138,14 +140,13 @@
         <p data-i18n="dataQuality.architecture.subtitle">From operational data sources to latency analysis and monitoring.</p>
       </div>
       <div class="architecture-card">
-        <img src="../../assets/images/data-quality-monitoring-architecture.png" alt="Architecture diagram for data latency monitoring pipeline using MongoDB, SQL Server, Python processing, CSV outputs, and Power BI dashboards" loading="lazy" decoding="async" data-i18n-attr="alt:dataQuality.architecture.alt">
+        <img src="../../assets/images/data-latency-architecture.png" alt="Architecture diagram for data latency monitoring pipeline using MongoDB, SQL Server, Python processing, CSV outputs, and Power BI dashboards" loading="lazy" decoding="async" data-i18n-attr="alt:dataQuality.architecture.alt">
       </div>
       <ul class="architecture-list">
-        <li data-i18n="dataQuality.architecture.items.0">Data sources: MongoDB and SQL Server.</li>
-        <li data-i18n="dataQuality.architecture.items.1">SQL Server sources included both the alarm events table and the final alarm details table.</li>
-        <li data-i18n="dataQuality.architecture.items.2">Python ETL to compute latency metrics and generate per-client outputs.</li>
-        <li data-i18n="dataQuality.architecture.items.3">Outputs exported as CSV files and loaded into Power BI.</li>
-        <li data-i18n="dataQuality.architecture.items.4">Power BI refresh driven by loading a client CSV folder.</li>
+        <li data-i18n="dataQuality.architecture.items.0">Data sources included MongoDB, SQL Server alarm data (complementary tables), and GPS records.</li>
+        <li data-i18n="dataQuality.architecture.items.1">Python-based extraction and processing to compute latency metrics.</li>
+        <li data-i18n="dataQuality.architecture.items.2">Results exported as CSV files for flexible, client-specific analysis.</li>
+        <li data-i18n="dataQuality.architecture.items.3">Power BI dashboards loaded directly from CSV folders for rapid updates.</li>
       </ul>
     </section>
 
@@ -247,5 +248,4 @@
   <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
 

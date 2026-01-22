@@ -207,6 +207,43 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.image-rotator {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.image-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.image-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(190, 205, 235, 0.35);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image-dot:hover,
+.image-dot:focus-visible {
+  background: rgba(47, 118, 224, 0.7);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(47, 118, 224, 0.35);
+  outline: none;
+}
+
+.image-dot.is-active {
+  background: rgba(47, 118, 224, 0.95);
+  box-shadow: 0 6px 12px rgba(47, 118, 224, 0.4);
+}
+
 .preview-card h3 {
   margin: 0 0 0.6rem;
   font-size: 1.1rem;

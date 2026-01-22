@@ -114,6 +114,97 @@ function initRevealObserver() {
   revealItems.forEach((item) => observer.observe(item));
 }
 
+function initImageRotators() {
+  document.querySelectorAll("[data-rotator]").forEach((container) => {
+    const img = container.querySelector("img");
+    if (!img) {
+      return;
+    }
+
+    const sources = container.dataset.rotator
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+    if (sources.length < 2) {
+      return;
+    }
+
+    const intervalMs = Number(container.dataset.interval) || 2000;
+    let index = sources.indexOf(img.getAttribute("src"));
+    if (index < 0) {
+      index = 0;
+    }
+
+    const dots = document.createElement("div");
+    dots.className = "image-dots";
+    const dotButtons = sources.map((_, idx) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "image-dot";
+      dot.setAttribute("aria-label", `Image ${idx + 1}`);
+      dot.setAttribute("aria-pressed", "false");
+      dot.addEventListener("click", () => {
+        setIndex(idx);
+      });
+      dots.appendChild(dot);
+      return dot;
+    });
+    container.appendChild(dots);
+
+    let timerId = null;
+    let paused = false;
+
+    const setIndex = (nextIndex) => {
+      index = (nextIndex + sources.length) % sources.length;
+      img.src = sources[index];
+      dotButtons.forEach((dot, idx) => {
+        const isActive = idx === index;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    };
+
+    const start = () => {
+      if (timerId || intervalMs <= 0) {
+        return;
+      }
+      timerId = setInterval(() => {
+        if (paused) {
+          return;
+        }
+        setIndex(index + 1);
+      }, intervalMs);
+    };
+
+    const stop = () => {
+      if (!timerId) {
+        return;
+      }
+      clearInterval(timerId);
+      timerId = null;
+    };
+
+    container.addEventListener("mouseenter", () => {
+      paused = true;
+    });
+    container.addEventListener("mouseleave", () => {
+      paused = false;
+    });
+    container.addEventListener("focusin", () => {
+      paused = true;
+    });
+    container.addEventListener("focusout", () => {
+      paused = false;
+    });
+
+    setIndex(index);
+    start();
+
+    window.addEventListener("pagehide", stop, { once: true });
+  });
+}
+
 function renderProjects(projects) {
   const grid = document.getElementById("projects-grid");
   if (!grid) {
@@ -315,4 +406,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setLanguage(initialLang);
   applyStackIconFallbacks();
   initRevealObserver();
+  initImageRotators();
 });

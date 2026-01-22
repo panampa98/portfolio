@@ -31,7 +31,12 @@
       "highlights": [
         "Disene el pipeline de datos y un scoring de salud para CAS, mejorando la visibilidad y las decisiones de mantenimiento."
       ],
-      "tags": ["SQL Server", "MongoDB", "Power BI", "Health Scoring"],
+      "tags": [
+        "SQL Server",
+        "MongoDB",
+        "Power BI",
+        "Health Scoring"
+      ],
       "i18n": {
         "cas": {
           "hero": {
@@ -61,7 +66,13 @@
             },
             "scope": {
               "label": "Alcance de despliegue",
-              "countries": ["Perú", "Brasil", "Chile", "Colombia", "México"]
+              "countries": [
+                "Perú",
+                "Brasil",
+                "Chile",
+                "Colombia",
+                "México"
+              ]
             }
           },
           "summary": {
@@ -159,15 +170,23 @@
             "groups": [
               {
                 "title": "Datos y almacenamiento",
-                "items": ["SQL Server", "MongoDB"]
+                "items": [
+                  "SQL Server",
+                  "MongoDB"
+                ]
               },
               {
                 "title": "Procesamiento",
-                "items": ["Procedimientos almacenados", "Tareas programadas"]
+                "items": [
+                  "Procedimientos almacenados",
+                  "Tareas programadas"
+                ]
               },
               {
                 "title": "Analítica y visualización",
-                "items": ["Power BI"]
+                "items": [
+                  "Power BI"
+                ]
               }
             ]
           },
@@ -192,169 +211,193 @@
       "highlights": [
         "Implemente un algoritmo para detectar fallas del sensor de reversa con 90% de precision usando datos GPS y modelos cinematicos."
       ],
-      "tags": ["Python", "Pandas", "SQL"]
+      "tags": [
+        "Python",
+        "Pandas",
+        "SQL"
+      ]
     },
     {
       "slug": "anomaly-detection/data-quality-monitoring",
-      "title": "Monitoreo de calidad de datos casi en tiempo real",
-      "domain": "Mineria / Calidad de datos",
-      "problem": "Planificar reportes de alarmas casi en tiempo real.",
-      "impact": "Visibilidad casi en tiempo real para reportes de alarmas.",
+      "title": "Análisis de Latencia de Datos y Factibilidad de Reportes",
+      "domain": "Minería / Calidad de Datos",
+      "problem": "Falta de claridad sobre los tiempos de llegada de los datos al definir la frecuencia de reportes.",
+      "impact": "Permitió definir una cadencia de reportes realista y orientar mejoras específicas cuando fue necesario.",
       "highlights": [
-        "Desarrolle un sistema de monitoreo de calidad de datos para planificar estrategias de reportes de alarmas casi en tiempo real."
+        "Análisis de la latencia de datos en MongoDB, datos de alarmas en SQL Server y fuentes GPS para definir la factibilidad de reportes en casi tiempo real.",
+        "Soporte a decisiones operativas y comerciales mediante la identificación de ventanas óptimas de reportabilidad por cliente.",
+        "Habilitó mejoras posteriores y permitió validar avances a través de análisis repetidos bajo demanda."
       ],
-      "tags": ["Python", "ETL", "Monitoreo"],
+      "tags": [
+        "Python",
+        "MongoDB",
+        "SQL Server",
+        "Power BI",
+        "Calidad de Datos",
+        "Análisis de Latencia"
+      ],
       "i18n": {
         "dataQuality": {
           "hero": {
-            "eyebrow": "Monitoreo de latencia y calidad de datos",
-            "title": "Monitoreo de calidad de datos casi en tiempo real",
-            "subtitle": "Analisis de latencia entre MongoDB y SQL Server para definir frecuencia de reporte, detectar cuellos de botella y guiar mejoras de red y flujo de datos.",
+            "eyebrow": "Evaluación de Latencia de Datos",
+            "title": "Análisis de Latencia de Datos y Factibilidad de Reportes",
+            "subtitle": "Análisis bajo demanda para evaluar los tiempos de llegada de los datos y definir una frecuencia de reportes factible entre clientes.",
             "chips": [
               "Python",
               "MongoDB",
               "SQL Server",
-              "Power BI",
-              "Monitoreo"
+              "Power BI"
             ],
-            "confidentialNote": "Capturas y diagramas estan anonimizados por NDA."
+            "confidentialNote": "Las capturas y diagramas han sido anonimizados debido a acuerdos de confidencialidad (NDA)."
           },
           "panel": {
             "focus": {
               "label": "Enfoque",
-              "value": "Latencia de datos (minutos a dias) y deteccion de cuellos de botella"
+              "value": "Latencia en la llegada de los datos y factibilidad de reportes"
             },
             "outcome": {
               "label": "Resultado",
-              "value": "Ventana de reporte confiable por cliente + mejoras accionables"
+              "value": "Definición de una cadencia óptima de reportes por cliente"
             },
             "audience": {
               "label": "Audiencia",
-              "value": "Ventas, soporte remoto y stakeholders que definen SLAs de reporte"
+              "value": "Equipos de soporte remoto y administradores de contrato"
             },
             "scope": {
-              "label": "Alcance de despliegue",
-              "countries": ["Peru", "Brasil", "Chile", "Colombia", "Mexico"]
+              "label": "Alcance de Despliegue",
+              "countries": [
+                "Perú",
+                "Brasil",
+                "Chile",
+                "Colombia",
+                "México"
+              ]
             }
           },
           "summary": {
-            "title": "Resumen del proyecto",
-            "subtitle": "Vista rapida de la historia central.",
+            "title": "Resumen del Proyecto",
+            "subtitle": "Por qué y cómo se definió la cadencia de reportes.",
             "cards": [
               {
                 "title": "Problema",
-                "body": "Se proponian estrategias de reporte sin conocer el retraso real de extremo a extremo, lo que arriesgaba promesas irrealistas de casi tiempo real."
+                "body": "La frecuencia de los reportes debía alinearse con el comportamiento real de llegada de los datos entre sistemas."
               },
               {
-                "title": "Solucion",
-                "body": "Medi latencia en MongoDB y SQL Server, clasifique retrasos y detecte cuellos de botella por fuente y cliente."
+                "title": "Solución",
+                "body": "Ejecución de un análisis de latencia bajo demanda considerando MongoDB, tablas complementarias de alarmas en SQL Server y datos GPS."
               },
               {
                 "title": "Impacto",
-                "body": "Defini frecuencia de reporte realista por cliente y valide mejoras tras cambios en el flujo de datos."
+                "body": "Proporcionó una referencia clara para reportes en casi tiempo real y criterios para identificar cuándo eran necesarias mejoras."
               },
               {
                 "title": "Usuarios",
-                "body": "Equipos de ventas y soporte remoto usando el dashboard de monitoreo."
+                "body": "Ingenieros de soporte remoto y administradores de contrato a cargo del monitoreo operativo."
               }
             ]
           },
           "dashboard": {
-            "title": "Vistas clave del dashboard",
-            "subtitle": "Dos vistas para definir frecuencia de reporte e identificar cuellos de botella.",
+            "title": "Vistas Clave del Dashboard",
+            "subtitle": "Herramientas visuales para evaluar la factibilidad de reportes.",
             "views": [
               {
-                "alt": "Vista resumen de Power BI con latencia por fuente y colores de criticidad",
-                "title": "Resumen de latencia por fuente",
+                "alt": "Vista general en Power BI que muestra la distribución de latencia por fuente de datos con criticidad codificada por colores",
+                "title": "Resumen de Latencia por Fuente",
                 "bullets": [
-                  "Agrega latencia por fuente para identificar cuellos de botella.",
-                  "Buckets de criticidad para definir la cadencia de reporte.",
-                  "KPI de porcentaje de datos dentro de 30 minutos.",
-                  "Escala de color para retraso aceptable, medio y alto."
+                  "Agregación de la latencia por fuente de datos para comprender rápidamente los tiempos típicos de llegada.",
+                  "Escala de colores que indica rangos aceptables, intermedios y de alto retraso.",
+                  "Utilizada para definir una ventana de reportabilidad realista sin cálculos manuales."
                 ]
               },
               {
-                "alt": "Vista detalle de Power BI con latencia diaria por vehiculo y drill-down",
-                "title": "Detalle diario por vehiculo",
+                "alt": "Vista detallada en Power BI que muestra la latencia promedio diaria por vehículo",
+                "title": "Detalle de Latencia por Activo",
                 "bullets": [
-                  "Drill-down por vehiculo para detectar patrones de retraso.",
-                  "Promedio diario de latencia para validar mejoras.",
-                  "Distingue cuellos sistemicos vs casos aislados."
+                  "Análisis a nivel de vehículo para obtener mayor visibilidad operativa.",
+                  "Permite distinguir comportamientos sistémicos de casos aislados.",
+                  "Útil para validar mejoras luego de cambios en la red o en los procesos."
                 ]
               }
             ]
           },
           "architecture": {
-            "title": "Arquitectura del pipeline de datos",
-            "subtitle": "De las fuentes operativas al analisis de latencia y monitoreo.",
-            "alt": "Diagrama de arquitectura para monitoreo de latencia con MongoDB, SQL Server, Python, CSV y Power BI",
+            "title": "Arquitectura del Análisis de Datos",
+            "subtitle": "Fuentes y procesamiento utilizados para la evaluación de latencia.",
+            "alt": "Diagrama de arquitectura para el análisis de latencia usando MongoDB, SQL Server, datos GPS, procesamiento en Python y Power BI",
             "items": [
-              "Fuentes de datos: MongoDB y SQL Server.",
-              "En SQL Server se incluyeron tabla de alarmas y tabla final de detalles.",
-              "ETL en Python para calcular latencia y generar outputs por cliente.",
-              "Salidas en CSV cargadas en Power BI.",
-              "Refresh en Power BI usando carpeta de CSV por cliente."
+              "Las fuentes de datos incluyeron MongoDB, datos de alarmas en SQL Server (tablas complementarias) y registros GPS.",
+              "Procesamiento en Python y SQL Server para el cálculo de métricas de latencia.",
+              "Resultados exportados en archivos CSV para análisis flexible por cliente.",
+              "Dashboards en Power BI cargados directamente desde carpetas de CSV para actualizaciones rápidas."
             ]
           },
           "highlights": {
-            "title": "Aspectos tecnicos clave",
-            "subtitle": "Decisiones de ingenieria que hicieron el analisis accionable.",
+            "title": "Aspectos Técnicos Clave",
+            "subtitle": "Elementos que hicieron el análisis práctico y reutilizable.",
             "cards": [
               {
-                "title": "Medicion end-to-end de latencia",
-                "body": "Calculo de deltas en minutos entre multiples saltos y etapas de SQL Server."
+                "title": "Evaluación bajo demanda",
+                "body": "Diseñado para ejecutarse una sola vez o repetirse cuando fuese necesario, en lugar de un monitoreo continuo."
               },
               {
-                "title": "Buckets de criticidad + guia de SLA",
-                "body": "Mapeo de latencia a rangos para recomendar frecuencia de reporte realista."
+                "title": "Agrupación por rangos de latencia",
+                "body": "Clasificación de los retrasos en rangos intuitivos (de minutos a días) para apoyar la toma de decisiones."
               },
               {
-                "title": "Aislamiento de cuellos por fuente",
-                "body": "Separacion de retrasos por fuente y etapa para identificar el cuello real."
+                "title": "Cobertura multisource",
+                "body": "Consideró MongoDB, datos de alarmas en SQL Server y fuentes GPS para una visión integral."
               },
               {
-                "title": "Dashboard operativo",
-                "body": "Vistas en Power BI con severidad por color y drill-down para soporte y ventas."
+                "title": "Habilitación operativa",
+                "body": "Las visualizaciones permitieron que usuarios no técnicos interpreten los resultados rápidamente."
               }
             ]
           },
           "role": {
-            "title": "Rol y responsabilidades",
-            "subtitle": "Responsabilidad en analisis, pipeline, dashboarding y habilitacion.",
+            "title": "Rol y Responsabilidades",
+            "subtitle": "Colaboración en análisis, herramientas y transferencia de conocimiento.",
             "items": [
-              "Defini objetivo y metodologia para determinar ventana de reporte confiable.",
-              "Medi retrasos en MongoDB y SQL Server, incluyendo alarmas y detalles.",
-              "Construi logica en Python para calcular latencia y datasets por cliente.",
-              "Disene dashboards en Power BI con criticidad por color.",
-              "Apoye conversaciones con stakeholders para mejoras de red y flujo.",
-              "Entrene a soporte remoto para interpretar la herramienta."
+              "Definición de la metodología para evaluar latencia de datos y factibilidad de reportes.",
+              "Colaboración con equipos de soporte remoto para la extracción y validación de datos.",
+              "Implementación del procesamiento en Python y dashboards en Power BI.",
+              "Capacitación al personal de soporte remoto para ejecutar análisis futuros de forma autónoma.",
+              "Soporte a administradores de contrato con criterios de reportabilidad basados en datos."
             ]
           },
           "stack": {
-            "title": "Stack tecnologico",
-            "subtitle": "Agrupado por capas usadas en produccion.",
+            "title": "Stack Tecnológico",
+            "subtitle": "Herramientas utilizadas a lo largo del flujo de trabajo.",
             "groups": [
               {
-                "title": "Datos y almacenamiento",
-                "items": ["MongoDB", "SQL Server"]
+                "title": "Fuentes de Datos",
+                "items": [
+                  "MongoDB",
+                  "SQL Server",
+                  "Datos GPS"
+                ]
               },
               {
-                "title": "Procesamiento / ETL",
-                "items": ["Python", "Exportaciones CSV"]
+                "title": "Procesamiento",
+                "items": [
+                  "Python",
+                  "CSV"
+                ]
               },
               {
-                "title": "Analitica y visualizacion",
-                "items": ["Power BI"]
+                "title": "Visualización",
+                "items": [
+                  "Power BI"
+                ]
               }
             ]
           },
           "lessons": {
             "summary": "Lecciones aprendidas",
             "items": [
-              "El casi tiempo real debe basarse en distribuciones observadas, no suposiciones.",
-              "Separar latencia por fuente y etapa vuelve accionables los cuellos.",
-              "Umbrales simples aceleran decisiones de SLA y expectativas.",
-              "El monitoreo prueba mejoras despues de cambios del cliente."
+              "La frecuencia de reportes debe basarse en el comportamiento real de llegada de los datos, no en supuestos.",
+              "Un análisis bien ejecutado suele ser suficiente para definir la cadencia de reportes.",
+              "Visualizaciones claras facilitan la alineación entre hallazgos técnicos y decisiones operativas o contractuales.",
+              "La transferencia de conocimiento garantiza la sostenibilidad más allá del análisis inicial."
             ]
           }
         }
@@ -369,7 +412,11 @@
       "highlights": [
         "Desarrolle un modelo para sectorizar la mina en areas estrategicas usando clustering, teoria de grafos y propagacion de etiquetas."
       ],
-      "tags": ["Python", "Teoria de Grafos", "Clustering"]
+      "tags": [
+        "Python",
+        "Teoria de Grafos",
+        "Clustering"
+      ]
     },
     {
       "slug": "dashboards/operator-behavior-monitor",
@@ -380,7 +427,11 @@
       "highlights": [
         "Desarrolle una herramienta de monitoreo de alertas que califica la conduccion de operadores para tomar medidas preventivas."
       ],
-      "tags": ["Python", "Dashboards", "Seguridad"]
+      "tags": [
+        "Python",
+        "Dashboards",
+        "Seguridad"
+      ]
     },
     {
       "slug": "dashboards/network-signal-kpi",
@@ -391,7 +442,11 @@
       "highlights": [
         "Desarrolle una herramienta de monitoreo de calidad de senal de red con proceso ETL automatizado y dashboard de KPIs."
       ],
-      "tags": ["Python", "ETL", "Dashboards"]
+      "tags": [
+        "Python",
+        "ETL",
+        "Dashboards"
+      ]
     },
     {
       "slug": "risk-modeling/over-indebtedness-model",
@@ -402,7 +457,11 @@
       "highlights": [
         "Desarrolle un modelo para detectar sobreendeudamiento con 83% de precision y 11% de separacion entre leads buenos y malos (antes 5%)."
       ],
-      "tags": ["Python", "Scikit-learn", "Riesgo"]
+      "tags": [
+        "Python",
+        "Scikit-learn",
+        "Riesgo"
+      ]
     },
     {
       "slug": "graph-ml/income-inference-graph",
@@ -413,7 +472,11 @@
       "highlights": [
         "Complemente el modelo de inferencia de ingresos con un segmentador basado en teoria de grafos, logrando +2% de precision."
       ],
-      "tags": ["Python", "Teoria de Grafos", "ML"]
+      "tags": [
+        "Python",
+        "Teoria de Grafos",
+        "ML"
+      ]
     },
     {
       "slug": "ml-systems/nrt-alerting-pipeline",
@@ -424,7 +487,11 @@
       "highlights": [
         "Desarrolle mas de 20 reportes resumidos para detectar incidencias en controles de ejecucion mensual de modelos ML de Riesgos Retail y Cobranzas."
       ],
-      "tags": ["Python", "Reporting", "Model Monitoring"]
+      "tags": [
+        "Python",
+        "Reporting",
+        "Model Monitoring"
+      ]
     }
   ]
 }
