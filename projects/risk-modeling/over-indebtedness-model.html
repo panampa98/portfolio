@@ -10,28 +10,213 @@
   <link rel="stylesheet" href="../../assets/css/styles.css">
   <link rel="stylesheet" href="../../assets/css/projects.css">
 </head>
-<body data-project-slug="risk-modeling/over-indebtedness-model">
+<body data-project-slug="risk-modeling/over-indebtedness-model" class="cas-project-page">
   <header>
     <div class="container">
-      <div id="language-selector" style="display: flex; justify-content: flex-end; align-items: center;">
-         <label id="language-label">Select Language</label>
-         <button id="en-btn" class="language-button" onclick="setLanguage('en')">EN</button>
-         <button id="es-btn" class="language-button" onclick="setLanguage('es')">ES</button>
-       </div>
+      <div id="language-selector" class="language-selector" role="group" aria-labelledby="language-label">
+         <span id="language-label" class="language-label">Select Language</span>
+         <div class="language-pill">
+           <button id="en-btn" class="language-button" type="button" aria-pressed="false" onclick="setLanguage('en')">EN</button>
+           <button id="es-btn" class="language-button" type="button" aria-pressed="false" onclick="setLanguage('es')">ES</button>
+         </div>
+      </div>
     </div>
   </header>
 
-  <main class="container project-detail">
-    <section class="project-hero">
-      <h1 id="project-title">Project Title</h1>
-      <p id="project-summary"></p>
-      <ul id="project-tags" class="project-tags"></ul>
+  <main class="container project-detail cas-project">
+    <section class="project-hero cas-hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow" data-i18n="overIndebtedness.hero.eyebrow">Risk Scoring / Lead Screening</p>
+          <h1 data-i18n="overIndebtedness.hero.title">Over-Indebtedness Detection Model</h1>
+          <p class="hero-subtitle" data-i18n="overIndebtedness.hero.subtitle">A classification model to strengthen lead screening by identifying over-indebted profiles and improving separation between good and bad outcomes.</p>
+          <ul class="chip-list">
+            <li data-i18n="overIndebtedness.hero.chips.0">Python</li>
+            <li data-i18n="overIndebtedness.hero.chips.1">LightGBM</li>
+            <li data-i18n="overIndebtedness.hero.chips.2">SHAP</li>
+            <li data-i18n="overIndebtedness.hero.chips.3">AWS Athena</li>
+            <li data-i18n="overIndebtedness.hero.chips.4">AWS SageMaker</li>
+          </ul>
+          <p class="confidential-note" data-i18n="overIndebtedness.hero.confidentialNote">Screenshots, figures, and business metrics are anonymized due to confidentiality.</p>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-card">
+            <p class="panel-label" data-i18n="overIndebtedness.panel.focus.label">Focus</p>
+            <p class="panel-value" data-i18n="overIndebtedness.panel.focus.value">Lead risk screening</p>
+            <p class="panel-label" data-i18n="overIndebtedness.panel.outcome.label">Outcome</p>
+            <p class="panel-value" data-i18n="overIndebtedness.panel.outcome.value">Better separation of risk profiles</p>
+            <p class="panel-label" data-i18n="overIndebtedness.panel.audience.label">Audience</p>
+            <p class="panel-value" data-i18n="overIndebtedness.panel.audience.value">Risk analysts, credit policy, and business stakeholders</p>
+            <p class="panel-label" data-i18n="overIndebtedness.panel.scope.label">Deployment Scope</p>
+            <ul class="panel-scope">
+              <li>
+                <img src="../../assets/icons/flags/peru.svg" alt="" aria-hidden="true" class="flag-icon">
+                <span data-i18n="overIndebtedness.panel.scope.countries.0">Peru</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="project-highlights">
-      <h2 id="project-details-heading">Project Details</h2>
-      <h3 class="section-label" data-i18n="highlightsLabel">Highlights</h3>
-      <ul id="project-highlights" class="highlight-list"></ul>
+    <section class="section-block reveal project-summary">
+      <div class="section-heading">
+        <h2 data-i18n="overIndebtedness.summary.title">Project Summary</h2>
+        <p data-i18n="overIndebtedness.summary.subtitle">Quick scan of the core story.</p>
+      </div>
+      <div class="summary-grid">
+        <article class="summary-card">
+          <h3 data-i18n="overIndebtedness.summary.cards.0.title">Problem</h3>
+          <p data-i18n="overIndebtedness.summary.cards.0.body">Lead screening needed stronger differentiation to detect over-indebted profiles earlier.</p>
+        </article>
+        <article class="summary-card">
+          <h3 data-i18n="overIndebtedness.summary.cards.1.title">Solution</h3>
+          <p data-i18n="overIndebtedness.summary.cards.1.body">A supervised classification model (LightGBM) trained on socio-demographic, financial-system behavior, and internal transactional signals.</p>
+        </article>
+        <article class="summary-card">
+          <h3 data-i18n="overIndebtedness.summary.cards.2.title">Impact</h3>
+          <p data-i18n="overIndebtedness.summary.cards.2.body">Improved separation between good and bad leads to 11% and achieved ~83% overall accuracy.</p>
+        </article>
+        <article class="summary-card">
+          <h3 data-i18n="overIndebtedness.summary.cards.3.title">Users</h3>
+          <p data-i18n="overIndebtedness.summary.cards.3.body">Risk and business teams using the score to support sustainable growth decisions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal dashboard-preview">
+      <div class="section-heading">
+        <h2 data-i18n="overIndebtedness.dashboard.title">Key Stakeholder Views</h2>
+        <p data-i18n="overIndebtedness.dashboard.subtitle">Artifacts and visuals used to communicate performance and impact.</p>
+      </div>
+      <div class="preview-grid">
+        <figure class="preview-card">
+          <img src="../../assets/images/roc.jpg" alt="Model performance view with ROC/AUC, Gini, confusion matrix and core metrics across train/test/OOT" loading="lazy" decoding="async" data-i18n-attr="alt:overIndebtedness.dashboard.views.0.alt">
+          <figcaption>
+            <h3 data-i18n="overIndebtedness.dashboard.views.0.title">Performance &amp; Stability</h3>
+            <ul>
+              <li data-i18n="overIndebtedness.dashboard.views.0.bullets.0">ROC curve and Gini to summarize discrimination power.</li>
+              <li data-i18n="overIndebtedness.dashboard.views.0.bullets.1">Train/Test/OOT metrics to confirm generalization and stability.</li>
+              <li data-i18n="overIndebtedness.dashboard.views.0.bullets.2">Confusion matrix to communicate trade-offs and operating point.</li>
+            </ul>
+          </figcaption>
+        </figure>
+        <figure class="preview-card">
+          <img src="../../assets/images/shap.png" alt="Explainability and impact view with SHAP summary and impact testing matrices/charts" loading="lazy" decoding="async" data-i18n-attr="alt:overIndebtedness.dashboard.views.1.alt">
+          <figcaption>
+            <h3 data-i18n="overIndebtedness.dashboard.views.1.title">Explainability &amp; Business Impact</h3>
+            <ul>
+              <li data-i18n="overIndebtedness.dashboard.views.1.bullets.0">SHAP summary to explain key drivers and feature importance.</li>
+              <li data-i18n="overIndebtedness.dashboard.views.1.bullets.1">Impact tests comparing the new model vs. current approach.</li>
+              <li data-i18n="overIndebtedness.dashboard.views.1.bullets.2">Business-oriented breakdowns to support adoption decisions.</li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-block reveal architecture-section">
+      <div class="section-heading">
+        <h2 data-i18n="overIndebtedness.architecture.title">Pipeline Development Flow</h2>
+        <p data-i18n="overIndebtedness.architecture.subtitle">From cloud data to training, evaluation, and stakeholder-ready outputs.</p>
+      </div>
+      <div class="architecture-card">
+        <img src="../../assets/images/over-indebtedness-architecture.png" alt="Flow diagram of the model development pipeline using AWS Athena, S3, SageMaker training workers, evaluation, explainability, and reporting" loading="lazy" decoding="async" data-i18n-attr="alt:overIndebtedness.architecture.alt">
+      </div>
+      <ul class="architecture-list">
+        <li data-i18n="overIndebtedness.architecture.items.0">Ingest &amp; stage data in AWS S3 (multiple internal and external sources).</li>
+        <li data-i18n="overIndebtedness.architecture.items.1">Feature building and dataset assembly via AWS Athena (SQL) over curated S3 tables.</li>
+        <li data-i18n="overIndebtedness.architecture.items.2">Create a feature store-style dataset snapshot and export training-ready tables back to S3.</li>
+        <li data-i18n="overIndebtedness.architecture.items.3">Spin up SageMaker training workers (compute instances) to run Python training pipelines.</li>
+        <li data-i18n="overIndebtedness.architecture.items.4">Train LightGBM models, run parameter search iterations, and select the final candidate based on performance + stability.</li>
+        <li data-i18n="overIndebtedness.architecture.items.5">Evaluate on Train/Test and Out-of-Time (OOT) periods; generate ROC/Gini and confusion-matrix metrics.</li>
+        <li data-i18n="overIndebtedness.architecture.items.6">Compute SHAP explanations and variable importance summaries for model interpretability.</li>
+        <li data-i18n="overIndebtedness.architecture.items.7">Package outputs (metrics, charts, and impact tests) into stakeholder materials and versioned artifacts.</li>
+      </ul>
+    </section>
+
+    <section class="section-block reveal technical-highlights">
+      <div class="section-heading">
+        <h2 data-i18n="overIndebtedness.highlights.title">Key Technical Highlights</h2>
+        <p data-i18n="overIndebtedness.highlights.subtitle">Engineering choices that shaped the solution.</p>
+      </div>
+      <div class="highlights-grid">
+        <article class="highlight-card">
+          <h3 data-i18n="overIndebtedness.highlights.cards.0.title">Cloud-native feature pipeline</h3>
+          <p data-i18n="overIndebtedness.highlights.cards.0.body">Athena + S3 enabled scalable feature assembly and reproducible dataset snapshots.</p>
+        </article>
+        <article class="highlight-card">
+          <h3 data-i18n="overIndebtedness.highlights.cards.1.title">Robust modeling approach</h3>
+          <p data-i18n="overIndebtedness.highlights.cards.1.body">LightGBM chosen for strong performance on tabular data and resilience to common data issues.</p>
+        </article>
+        <article class="highlight-card">
+          <h3 data-i18n="overIndebtedness.highlights.cards.2.title">Stability-first validation</h3>
+          <p data-i18n="overIndebtedness.highlights.cards.2.body">Evaluation across development, test, and OOT windows to reduce performance surprises in production.</p>
+        </article>
+        <article class="highlight-card">
+          <h3 data-i18n="overIndebtedness.highlights.cards.3.title">Explainability with SHAP</h3>
+          <p data-i18n="overIndebtedness.highlights.cards.3.body">Global feature importance and driver analysis to support governance and stakeholder trust.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal role-section">
+      <div class="section-heading">
+        <h2 data-i18n="overIndebtedness.role.title">Role &amp; Responsibilities</h2>
+        <p data-i18n="overIndebtedness.role.subtitle">Ownership across data, modeling, evaluation, and stakeholder communication.</p>
+      </div>
+      <ul class="role-list">
+        <li data-i18n="overIndebtedness.role.items.0">Designed the end-to-end modeling workflow (data > features > training > validation > reporting).</li>
+        <li data-i18n="overIndebtedness.role.items.1">Built feature engineering and dataset assembly logic on AWS (Athena/S3) and Python on SageMaker.</li>
+        <li data-i18n="overIndebtedness.role.items.2">Trained and tuned a LightGBM classifier and validated performance on Train/Test and OOT periods.</li>
+        <li data-i18n="overIndebtedness.role.items.3">Produced ROC/Gini and other evaluation artifacts to define operating thresholds and trade-offs.</li>
+        <li data-i18n="overIndebtedness.role.items.4">Generated explainability outputs (SHAP summaries) to communicate model drivers.</li>
+        <li data-i18n="overIndebtedness.role.items.5">Prepared stakeholder-ready documentation and impact-test results for decision-making and adoption.</li>
+      </ul>
+    </section>
+
+    <section class="section-block reveal stack-section">
+      <div class="section-heading">
+        <h2 data-i18n="overIndebtedness.stack.title">Tech Stack</h2>
+        <p data-i18n="overIndebtedness.stack.subtitle">Grouped by the layers used in the workflow.</p>
+      </div>
+      <div class="stack-grid">
+        <article class="stack-card">
+          <h3 data-i18n="overIndebtedness.stack.groups.0.title">Data &amp; Storage</h3>
+          <ul>
+            <li data-i18n="overIndebtedness.stack.groups.0.items.0">AWS S3</li>
+            <li data-i18n="overIndebtedness.stack.groups.0.items.1">AWS Athena</li>
+          </ul>
+        </article>
+        <article class="stack-card">
+          <h3 data-i18n="overIndebtedness.stack.groups.1.title">Modeling &amp; Compute</h3>
+          <ul>
+            <li data-i18n="overIndebtedness.stack.groups.1.items.0">AWS SageMaker</li>
+            <li data-i18n="overIndebtedness.stack.groups.1.items.1">Training Workers (Compute Instances)</li>
+            <li data-i18n="overIndebtedness.stack.groups.1.items.2">Python</li>
+          </ul>
+        </article>
+        <article class="stack-card">
+          <h3 data-i18n="overIndebtedness.stack.groups.2.title">ML &amp; Explainability</h3>
+          <ul>
+            <li data-i18n="overIndebtedness.stack.groups.2.items.0">LightGBM</li>
+            <li data-i18n="overIndebtedness.stack.groups.2.items.1">SHAP</li>
+            <li data-i18n="overIndebtedness.stack.groups.2.items.2">Scikit-learn</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal lessons-section">
+      <details class="lessons-details">
+        <summary data-i18n="overIndebtedness.lessons.summary">Lessons learned</summary>
+        <ul>
+          <li data-i18n="overIndebtedness.lessons.items.0">Out-of-time evaluation is essential for risk models to validate stability beyond random splits.</li>
+          <li data-i18n="overIndebtedness.lessons.items.1">Explainability accelerates stakeholder alignment and supports governance requirements.</li>
+          <li data-i18n="overIndebtedness.lessons.items.2">Clear impact testing bridges the gap between model metrics and business adoption decisions.</li>
+          <li data-i18n="overIndebtedness.lessons.items.3">Reproducible data snapshots (feature store-style exports) simplify iteration and auditability.</li>
+        </ul>
+      </details>
     </section>
   </main>
 
