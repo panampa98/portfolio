@@ -203,18 +203,18 @@
       }
     },
     {
-      "slug": "anomaly-detection/sensor-failure-gps",
-      "title": "Reverse Sensor Failure Detection",
-      "domain": "Mining / Telematics",
-      "problem": "Detect reverse sensor failures before downtime.",
-      "impact": "90% precision, enabled proactive maintenance.",
+      "slug": "risk-modeling/over-indebtedness-model",
+      "title": "Over-Indebtedness Detection Model",
+      "domain": "Banking / Risk",
+      "problem": "Detect over-indebted leads with higher separation.",
+      "impact": "83% precision and +11% separation between good and bad leads.",
       "highlights": [
-        "Implemented an algorithm to detect reverse sensor failures with 90% accuracy using GPS data and kinematic models."
+        "Developed a model to detect over-indebtedness with 83% accuracy and an 11% separation between good and bad leads (up from 5%)."
       ],
       "tags": [
         "Python",
-        "Pandas",
-        "SQL"
+        "Scikit-learn",
+        "Risk"
       ]
     },
     {
@@ -404,6 +404,21 @@
       }
     },
     {
+      "slug": "anomaly-detection/sensor-failure-gps",
+      "title": "Reverse Sensor Failure Detection",
+      "domain": "Mining / Telematics",
+      "problem": "Detect reverse sensor failures before downtime.",
+      "impact": "90% precision, enabled proactive maintenance.",
+      "highlights": [
+        "Implemented an algorithm to detect reverse sensor failures with 90% accuracy using GPS data and kinematic models."
+      ],
+      "tags": [
+        "Python",
+        "Pandas",
+        "SQL"
+      ]
+    },
+    {
       "slug": "graph-ml/mine-sectorization",
       "title": "Mine Sectorization with Graph Clustering",
       "domain": "Mining / Graph ML",
@@ -448,21 +463,7 @@
         "Dashboards"
       ]
     },
-    {
-      "slug": "risk-modeling/over-indebtedness-model",
-      "title": "Over-Indebtedness Detection Model",
-      "domain": "Banking / Risk",
-      "problem": "Detect over-indebted leads with higher separation.",
-      "impact": "83% precision and +11% separation between good and bad leads.",
-      "highlights": [
-        "Developed a model to detect over-indebtedness with 83% accuracy and an 11% separation between good and bad leads (up from 5%)."
-      ],
-      "tags": [
-        "Python",
-        "Scikit-learn",
-        "Risk"
-      ]
-    },
+    
     {
       "slug": "graph-ml/income-inference-graph",
       "title": "Income Inference with Graph Segmentation",

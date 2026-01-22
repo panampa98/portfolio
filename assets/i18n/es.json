@@ -203,18 +203,18 @@
       }
     },
     {
-      "slug": "anomaly-detection/sensor-failure-gps",
-      "title": "Deteccion de fallas del sensor de reversa",
-      "domain": "Mineria / Telematica",
-      "problem": "Detectar fallas del sensor de reversa antes de la detencion.",
-      "impact": "90% de precision y mantenimiento preventivo.",
+      "slug": "risk-modeling/over-indebtedness-model",
+      "title": "Modelo de deteccion de sobreendeudamiento",
+      "domain": "Banca / Riesgo",
+      "problem": "Detectar sobreendeudamiento con mejor separacion.",
+      "impact": "83% de precision y +11% de separacion.",
       "highlights": [
-        "Implemente un algoritmo para detectar fallas del sensor de reversa con 90% de precision usando datos GPS y modelos cinematicos."
+        "Desarrolle un modelo para detectar sobreendeudamiento con 83% de precision y 11% de separacion entre leads buenos y malos (antes 5%)."
       ],
       "tags": [
         "Python",
-        "Pandas",
-        "SQL"
+        "Scikit-learn",
+        "Riesgo"
       ]
     },
     {
@@ -404,6 +404,21 @@
       }
     },
     {
+      "slug": "anomaly-detection/sensor-failure-gps",
+      "title": "Deteccion de fallas del sensor de reversa",
+      "domain": "Mineria / Telematica",
+      "problem": "Detectar fallas del sensor de reversa antes de la detencion.",
+      "impact": "90% de precision y mantenimiento preventivo.",
+      "highlights": [
+        "Implemente un algoritmo para detectar fallas del sensor de reversa con 90% de precision usando datos GPS y modelos cinematicos."
+      ],
+      "tags": [
+        "Python",
+        "Pandas",
+        "SQL"
+      ]
+    },
+    {
       "slug": "graph-ml/mine-sectorization",
       "title": "Sectorizacion de mina con clustering y grafos",
       "domain": "Mineria / Graph ML",
@@ -448,21 +463,7 @@
         "Dashboards"
       ]
     },
-    {
-      "slug": "risk-modeling/over-indebtedness-model",
-      "title": "Modelo de deteccion de sobreendeudamiento",
-      "domain": "Banca / Riesgo",
-      "problem": "Detectar sobreendeudamiento con mejor separacion.",
-      "impact": "83% de precision y +11% de separacion.",
-      "highlights": [
-        "Desarrolle un modelo para detectar sobreendeudamiento con 83% de precision y 11% de separacion entre leads buenos y malos (antes 5%)."
-      ],
-      "tags": [
-        "Python",
-        "Scikit-learn",
-        "Riesgo"
-      ]
-    },
+    
     {
       "slug": "graph-ml/income-inference-graph",
       "title": "Inferencia de ingresos con segmentacion de grafos",
