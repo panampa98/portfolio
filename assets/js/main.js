@@ -216,7 +216,7 @@ function renderProjects(projects) {
   const impactLabel = labels.impactLabel || "Impact";
 
   grid.innerHTML = "";
-  projects.forEach((project) => {
+  projects.forEach((project, index) => {
     const card = document.createElement("article");
     card.className = "project-card";
 
@@ -229,8 +229,14 @@ function renderProjects(projects) {
       ? `<span class="project-domain">${project.domain}</span>`
       : "";
 
+    const isDisabled = index > 2;
+    const linkTag = isDisabled ? "div" : "a";
+    const linkAttrs = isDisabled
+      ? 'class="project-card__link is-disabled" aria-disabled="true"'
+      : `class="project-card__link" href="${withLang(`projects/${project.slug}.html`, currentLang)}"`;
+
     card.innerHTML = `
-      <a class="project-card__link" href="${withLang(`projects/${project.slug}.html`, currentLang)}">
+      <${linkTag} ${linkAttrs}>
         <div class="project-card__header">
           <h3>${project.title}</h3>
           ${domainMarkup}
@@ -244,7 +250,7 @@ function renderProjects(projects) {
           <p>${project.impact || ""}</p>
         </div>
         ${tagsMarkup}
-      </a>
+      </${linkTag}>
     `;
 
     grid.appendChild(card);
