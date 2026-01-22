@@ -1,8 +1,9 @@
-{
+﻿{
   "labels": {
     "languageLabel": "Seleccionar idioma",
     "aboutTitle": "Sobre mi",
     "aboutSubtitle": "Machine Learning Aplicado · Sistemas de Analítica",
+    "aboutEducation": "Universidad Nacional de Ingenier\u00eda (UNI), Per\u00fa",
     "aboutDescription": "Científico de datos aplicado e ingeniero mecatrónico con experiencia construyendo pipelines de datos, modelos predictivos y sistemas de monitoreo para entornos de alta confiabilidad e intensivos en datos en dominios industriales y financieros.\n\nMe enfoco en diseñar soluciones de analítica escalables que mejoran la eficiencia operativa, la optimización de costos, el monitoreo de riesgos y la toma de decisiones, combinando pensamiento analítico sólido con juicio ingenieril práctico.",
     "aboutCta": "↓ Ver proyectos seleccionados",
     "problemLabel": "Problema",
@@ -669,3 +670,4 @@
     }
   ]
 }
+

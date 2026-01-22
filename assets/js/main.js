@@ -299,6 +299,7 @@ function applyLabels(labels) {
   setTextById("language-label", labels.languageLabel);
   setTextById("about-title", labels.aboutTitle);
   setTextById("about-subtitle", labels.aboutSubtitle);
+  setTextById("about-education", labels.aboutEducation);
   setTextById("about-description", labels.aboutDescription);
   setTextById("about-cta", labels.aboutCta);
   setTextById("projects-title", labels.projectsTitle);
