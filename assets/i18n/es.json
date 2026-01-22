@@ -206,114 +206,112 @@
       "slug": "risk-modeling/over-indebtedness-model",
       "title": "Modelo de Detección de Sobreendeudamiento",
       "domain": "Banca / Riesgo",
-      "problem": "Identificar prospectos con sobreendeudamiento de forma más efectiva.",
-      "impact": "83% de precisión y +11% de separación entre prospectos buenos y malos.",
+      "problem": "Mejorar la separación entre prospectos de mayor y menor riesgo para apoyar un crecimiento sostenible.",
+      "impact": "83% de exactitud y +11% de separación entre prospectos buenos y malos (desde 5%).",
       "highlights": [
-        "Desarrollo de un modelo de clasificación para detectar sobreendeudamiento, mejorando la separación entre prospectos buenos y malos de 5% a 11%."
+        "Desarrollo de un modelo de clasificación basado en LightGBM para identificar potencial sobreendeudamiento y mejorar la separación de riesgo (+11% frente a un 5% base).",
+        "Construcción de un pipeline end-to-end en AWS (Athena + S3 + SageMaker + EC2) con datasets reutilizables y eficientes en costos para Train/Test/OOT.",
+        "Entrega de explicabilidad del modelo (SHAP) y reportes de desempeño (ROC/AUC/Gini), además de resultados de pruebas de impacto para stakeholders."
       ],
       "tags": [
-        "Python",
         "LightGBM",
-        "SHAP",
-        "AWS Athena",
-        "AWS S3",
-        "AWS SageMaker",
-        "Modelado de Riesgo"
+        "AWS",
+        "Athena",
+        "SageMaker",
+        "Python",
+        "Modelamiento de Riesgo",
+        "SHAP"
       ],
       "i18n": {
         "overIndebtedness": {
           "hero": {
-            "eyebrow": "Scoring de Riesgo / Evaluación de Prospectos",
+            "eyebrow": "Modelo de Clasificación de Riesgo",
             "title": "Modelo de Detección de Sobreendeudamiento",
-            "subtitle": "Modelo de clasificación orientado a fortalecer la evaluación de prospectos mediante la identificación de perfiles con sobreendeudamiento.",
+            "subtitle": "Modelo de clasificación con LightGBM para mejorar la separación de riesgo y respaldar decisiones más consistentes de exclusión y crecimiento.",
             "chips": [
               "Python",
               "LightGBM",
+              "AWS (Athena/S3/SageMaker/EC2)",
               "SHAP",
-              "AWS Athena",
-              "AWS SageMaker"
+              "ROC/AUC"
             ],
-            "confidentialNote": "Las capturas, gráficos y métricas de negocio han sido anonimizadas por motivos de confidencialidad."
+            "confidentialNote": "Las capturas y diagramas han sido anonimizados debido a acuerdos de confidencialidad (NDA)."
           },
           "panel": {
             "focus": {
               "label": "Enfoque",
-              "value": "Evaluación de riesgo en prospectos"
+              "value": "Clasificación de riesgo y mejora en la separación"
             },
             "outcome": {
               "label": "Resultado",
-              "value": "Mejor separación de perfiles de riesgo"
+              "value": "Mejor discriminación para decisiones de exclusión y crecimiento"
             },
             "audience": {
               "label": "Audiencia",
-              "value": "Analistas de riesgo, equipos de política crediticia y stakeholders de negocio"
+              "value": "Stakeholders de riesgo, equipos de analítica y responsables de decisiones de exclusión"
             },
             "scope": {
               "label": "Alcance de Despliegue",
-              "countries": [
-                "Perú"
-              ]
+              "countries": []
             }
           },
           "summary": {
             "title": "Resumen del Proyecto",
-            "subtitle": "Visión general del problema, la solución y el impacto.",
+            "subtitle": "Vista rápida de la historia principal.",
             "cards": [
               {
                 "title": "Problema",
-                "body": "El proceso de evaluación de prospectos requería una mejor diferenciación para identificar perfiles con sobreendeudamiento de manera temprana."
+                "body": "Las decisiones de riesgo requerían una mejor separación entre prospectos de mayor y menor riesgo para sostener el crecimiento."
               },
               {
                 "title": "Solución",
-                "body": "Desarrollo de un modelo de clasificación supervisado (LightGBM) entrenado con variables sociodemográficas, comportamiento financiero y señales internas."
+                "body": "Entrenamiento de un clasificador LightGBM utilizando datos alojados en AWS y features engineered, validado en periodos Train/Test y OOT."
               },
               {
                 "title": "Impacto",
-                "body": "Incremento de la separación entre prospectos buenos y malos hasta un 11%, con una precisión aproximada del 83%."
+                "body": "Mejora en la separación (+11% frente a 5%) y una exactitud cercana al 83%, respaldada por pruebas de impacto y reportes listos para stakeholders."
               },
               {
                 "title": "Usuarios",
-                "body": "Equipos de riesgo y negocio que utilizan el score como apoyo en decisiones de crecimiento sostenible."
+                "body": "Stakeholders de riesgo y crecimiento que consumen los resultados del modelo, además de equipos de analítica que mantienen el pipeline."
               }
             ]
           },
           "dashboard": {
-            "title": "Vistas Clave para Stakeholders",
-            "subtitle": "Elementos visuales utilizados para comunicar desempeño e impacto.",
+            "title": "Vistas Clave del Modelo",
+            "subtitle": "Vistas utilizadas para validar desempeño, explicar drivers y comunicar impacto.",
             "views": [
               {
-                "alt": "Vista de desempeño del modelo con curvas ROC/AUC, Gini, matriz de confusión y métricas en entrenamiento, prueba y out-of-time",
-                "title": "Desempeño y Estabilidad",
+                "alt": "Vista de desempeño del modelo con curva ROC y métricas clave en Train, Test y OOT",
+                "title": "Desempeño y Estabilidad (Train/Test/OOT)",
                 "bullets": [
-                  "Curva ROC y coeficiente Gini para resumir la capacidad de discriminación.",
-                  "Métricas en entrenamiento, prueba y períodos out-of-time para validar estabilidad.",
-                  "Matriz de confusión para comunicar compromisos y puntos de corte operativos."
+                  "ROC/AUC y Gini para evaluar el poder de discriminación a lo largo del tiempo.",
+                  "Validaciones de estabilidad entre desarrollo y periodos fuera de tiempo (OOT) para reducir el riesgo de sobreajuste.",
+                  "Reporte de métricas alineadas a los objetivos de riesgo (por ejemplo, énfasis en recall para la clase de mayor riesgo)."
                 ]
               },
               {
-                "alt": "Vista de explicabilidad e impacto con resumen SHAP y gráficos de pruebas de impacto",
-                "title": "Explicabilidad e Impacto de Negocio",
+                "alt": "Vista de explicabilidad y pruebas de impacto con resumen SHAP y matrices comparativas",
+                "title": "Explicabilidad (SHAP) y Pruebas de Impacto",
                 "bullets": [
-                  "Resumen SHAP para explicar los principales drivers del modelo.",
-                  "Pruebas de impacto comparando el modelo propuesto frente al enfoque previo.",
-                  "Visualizaciones orientadas a negocio para facilitar la adopción."
+                  "Resumen SHAP para explicar los principales drivers del modelo y fortalecer la confianza de los stakeholders.",
+                  "Pruebas de impacto para comparar el nuevo modelo frente al enfoque anterior y cuantificar cambios en la clasificación.",
+                  "Análisis adicionales para evaluar el comportamiento de riesgo posterior (por ejemplo, mora o tasa de incumplimiento por segmento)."
                 ]
               }
             ]
           },
           "architecture": {
             "title": "Flujo de Desarrollo del Pipeline",
-            "subtitle": "Desde los datos en la nube hasta el entrenamiento, evaluación y entrega de resultados.",
-            "alt": "Diagrama de flujo del pipeline de desarrollo del modelo utilizando AWS Athena, S3, SageMaker, cómputo de entrenamiento, evaluación y reportes",
+            "subtitle": "Flujo de trabajo de ML en AWS optimizado en costos.",
+            "alt": "Diagrama de flujo del desarrollo del pipeline de ML usando Athena, S3, SageMaker y EC2 para datasets Train/Test/OOT y modelamiento",
             "items": [
-              "Ingesta y almacenamiento de datos en AWS S3 desde múltiples fuentes internas y externas.",
-              "Construcción de variables y armado del dataset mediante consultas SQL en AWS Athena sobre datos curados en S3.",
-              "Generación de snapshots de datos tipo feature store y exportación de datasets listos para entrenamiento a S3.",
-              "Ejecución de trabajos de entrenamiento en AWS SageMaker utilizando instancias de cómputo dedicadas.",
-              "Entrenamiento de modelos LightGBM, iteración de hiperparámetros y selección del modelo final según desempeño y estabilidad.",
-              "Evaluación en conjuntos de entrenamiento, prueba y períodos out-of-time (OOT), generando métricas ROC/Gini y matrices de confusión.",
-              "Cálculo de explicabilidad mediante SHAP y generación de resúmenes de importancia de variables.",
-              "Empaquetado de resultados, métricas, gráficos y pruebas de impacto para presentación a stakeholders."
+              "Extracción de datos mediante AWS Athena desde fuentes en la nube (capa de consultas).",
+              "Ingeniería de features y construcción de datasets Train/Test/OOT, persistidos en AWS S3 para evitar reprocesos y reducir costos de cómputo y consultas.",
+              "Persistencia del target para Train/Test en S3 para entrenamiento y evaluación reproducibles.",
+              "Ejecución de las etapas de modelamiento en AWS SageMaker (experimentación, orquestación de entrenamiento, evaluación y gestión de artefactos).",
+              "Entrenamientos y validaciones intensivas ejecutadas en instancias AWS EC2.",
+              "Resultados de evaluación del modelo (ROC/Gini, matriz de confusión y resúmenes de pruebas de impacto) preparados para comunicación y seguimiento."
             ]
           },
           "highlights": {
@@ -321,60 +319,62 @@
             "subtitle": "Decisiones de ingeniería que dieron forma a la solución.",
             "cards": [
               {
-                "title": "Pipeline de variables en la nube",
-                "body": "Uso de Athena y S3 para construir variables escalables y snapshots reproducibles."
+                "title": "LightGBM para clasificación binaria a gran escala",
+                "body": "Selección de un enfoque de boosting basado en árboles, adecuado para features mixtas, alta dimensionalidad y entrenamiento escalable."
               },
               {
-                "title": "Enfoque robusto de modelado",
-                "body": "Selección de LightGBM por su alto desempeño en datos tabulares y su robustez ante problemas comunes de calidad."
+                "title": "Datasets reutilizables para control de costos",
+                "body": "Almacenamiento de datasets y targets engineered en S3 para Train/Test/OOT, evitando recomputaciones costosas y escaneos repetidos en Athena."
               },
               {
-                "title": "Validación centrada en estabilidad",
-                "body": "Evaluación en ventanas de desarrollo, prueba y out-of-time para reducir riesgos en producción."
+                "title": "Validación temporal (OOT)",
+                "body": "Evaluación de la generalización del modelo usando periodos fuera de tiempo para medir estabilidad ante cambios temporales."
               },
               {
-                "title": "Explicabilidad con SHAP",
-                "body": "Análisis de importancia y drivers del modelo para facilitar la gobernanza y la confianza de los stakeholders."
+                "title": "Entrega con foco en explicabilidad",
+                "body": "Uso de explicaciones globales basadas en SHAP y reportes claros para facilitar adopción y gobernanza."
               }
             ]
           },
           "role": {
             "title": "Rol y Responsabilidades",
-            "subtitle": "Responsabilidad integral en datos, modelado, evaluación y comunicación.",
+            "subtitle": "Responsabilidad integral en modelamiento, pipeline, evaluación y entrega a stakeholders.",
             "items": [
-              "Diseño del flujo completo de modelado (datos, variables, entrenamiento, validación y reportes).",
-              "Construcción de lógica de feature engineering y datasets en AWS (Athena y S3) y Python sobre SageMaker.",
-              "Entrenamiento y ajuste de un clasificador LightGBM con validación en períodos OOT.",
-              "Generación de métricas ROC/Gini y definición de umbrales operativos.",
-              "Producción de análisis de explicabilidad mediante SHAP.",
-              "Preparación de documentación, resultados y pruebas de impacto para stakeholders."
+              "Definición del objetivo de modelamiento, estrategia de target y criterios de evaluación.",
+              "Diseño e implementación del pipeline en AWS (Athena → outputs en S3 → entrenamiento y evaluación en SageMaker/EC2).",
+              "Construcción del flujo de ingeniería de features y persistencia de datasets Train/Test/OOT para reproducibilidad y eficiencia en costos.",
+              "Entrenamiento y ajuste de un clasificador LightGBM, validando desempeño en Train/Test y OOT.",
+              "Generación de artefactos de explicabilidad (SHAP) y reportes de desempeño (ROC/AUC/Gini) para gobernanza y comunicación.",
+              "Preparación de materiales de pruebas de impacto y resúmenes finales para stakeholders."
             ]
           },
           "stack": {
             "title": "Stack Tecnológico",
-            "subtitle": "Herramientas utilizadas a lo largo del flujo de trabajo.",
+            "subtitle": "Agrupado por capas utilizadas en el desarrollo.",
             "groups": [
               {
                 "title": "Datos y Almacenamiento",
                 "items": [
-                  "AWS S3",
-                  "AWS Athena"
+                  "AWS Athena",
+                  "AWS S3"
                 ]
               },
               {
-                "title": "Modelado y Cómputo",
+                "title": "Desarrollo del Modelo",
                 "items": [
                   "AWS SageMaker",
-                  "Instancias de Entrenamiento",
-                  "Python"
+                  "AWS EC2",
+                  "Python",
+                  "LightGBM"
                 ]
               },
               {
-                "title": "ML y Explicabilidad",
+                "title": "Explicabilidad y Evaluación",
                 "items": [
-                  "LightGBM",
                   "SHAP",
-                  "Scikit-learn"
+                  "ROC/AUC",
+                  "Gini",
+                  "Matriz de Confusión"
                 ]
               }
             ]
@@ -382,10 +382,10 @@
           "lessons": {
             "summary": "Lecciones aprendidas",
             "items": [
-              "La validación out-of-time es clave en modelos de riesgo para asegurar estabilidad.",
-              "La explicabilidad acelera la alineación con stakeholders y facilita la gobernanza.",
-              "Las pruebas de impacto conectan métricas técnicas con decisiones de negocio.",
-              "El uso de snapshots reproducibles simplifica la iteración y la auditabilidad."
+              "La validación temporal (OOT) es clave en modelos de riesgo para asegurar estabilidad más allá del periodo de desarrollo.",
+              "Persistir datasets y targets engineered evita reprocesos innecesarios y ayuda a controlar costos en la nube.",
+              "Los artefactos de explicabilidad (como SHAP) aceleran la alineación con stakeholders y la preparación para gobernanza.",
+              "Las pruebas de impacto conectan las métricas del modelo con resultados de negocio, mejorando adopción y confianza en las decisiones."
             ]
           }
         }

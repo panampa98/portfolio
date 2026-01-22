@@ -47,13 +47,6 @@
             <p class="panel-value" data-i18n="overIndebtedness.panel.outcome.value">Better separation of risk profiles</p>
             <p class="panel-label" data-i18n="overIndebtedness.panel.audience.label">Audience</p>
             <p class="panel-value" data-i18n="overIndebtedness.panel.audience.value">Risk analysts, credit policy, and business stakeholders</p>
-            <p class="panel-label" data-i18n="overIndebtedness.panel.scope.label">Deployment Scope</p>
-            <ul class="panel-scope">
-              <li>
-                <img src="../../assets/icons/flags/peru.svg" alt="" aria-hidden="true" class="flag-icon">
-                <span data-i18n="overIndebtedness.panel.scope.countries.0">Peru</span>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -91,7 +84,9 @@
       </div>
       <div class="preview-grid">
         <figure class="preview-card">
-          <img src="../../assets/images/roc.jpg" alt="Model performance view with ROC/AUC, Gini, confusion matrix and core metrics across train/test/OOT" loading="lazy" decoding="async" data-i18n-attr="alt:overIndebtedness.dashboard.views.0.alt">
+          <div class="image-rotator" data-rotator="../../assets/images/se-model-summary.png,../../assets/images/se-model-ssff-desembolsos.png,../../assets/images/se-model-mora.png" data-interval="2000">
+            <img src="../../assets/images/se-model-summary.png" alt="Model performance view with ROC/AUC, Gini, confusion matrix and core metrics across train/test/OOT" loading="lazy" decoding="async" data-i18n-attr="alt:overIndebtedness.dashboard.views.0.alt">
+          </div>
           <figcaption>
             <h3 data-i18n="overIndebtedness.dashboard.views.0.title">Performance &amp; Stability</h3>
             <ul>
@@ -236,5 +231,3 @@
   <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
-

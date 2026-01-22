@@ -206,55 +206,53 @@
       "slug": "risk-modeling/over-indebtedness-model",
       "title": "Over-Indebtedness Detection Model",
       "domain": "Banking / Risk",
-      "problem": "Flag over-indebted leads more effectively.",
-      "impact": "83% accuracy and +11% separation between good and bad leads.",
+      "problem": "Improve separation between higher-risk and lower-risk leads to support sustainable growth.",
+      "impact": "83% accuracy and +11% separation between good and bad leads (up from 5%).",
       "highlights": [
-        "Built a LightGBM classification model to identify over-indebted customers, improving separation between good vs. bad leads from 5% to 11%.",
-        "Validated stability across development and out-of-time (OOT) periods and documented the methodology, assumptions, and limitations for governance.",
-        "Packaged results and impact tests into stakeholder-ready materials, including ROC/Gini performance and business impact breakdowns."
+        "Developed a LightGBM-based classification model to identify potentially over-indebted customers and improve risk separation (+11% vs. 5% baseline).",
+        "Built an end-to-end AWS pipeline (Athena + S3 + SageMaker + EC2) with reusable, cost-aware datasets for Train/Test/OOT.",
+        "Delivered model explainability (SHAP) and performance reporting (ROC/AUC/Gini), plus impact testing results for stakeholders."
       ],
       "tags": [
-        "Python",
         "LightGBM",
-        "SHAP",
-        "AWS Athena",
-        "AWS S3",
-        "AWS SageMaker",
-        "Risk Modeling"
+        "AWS",
+        "Athena",
+        "SageMaker",
+        "Python",
+        "Risk Modeling",
+        "SHAP"
       ],
       "i18n": {
         "overIndebtedness": {
           "hero": {
-            "eyebrow": "Risk Scoring / Lead Screening",
+            "eyebrow": "Risk Classification Model",
             "title": "Over-Indebtedness Detection Model",
-            "subtitle": "A classification model to strengthen lead screening by identifying over-indebted profiles and improving separation between good and bad outcomes.",
+            "subtitle": "A LightGBM classification model to improve risk separation and support more consistent exclusion and growth decisions.",
             "chips": [
               "Python",
               "LightGBM",
+              "AWS (Athena/S3/SageMaker/EC2)",
               "SHAP",
-              "AWS Athena",
-              "AWS SageMaker"
+              "ROC/AUC"
             ],
-            "confidentialNote": "Screenshots, figures, and business metrics are anonymized due to confidentiality."
+            "confidentialNote": "Screenshots and diagrams are anonymized due to NDA."
           },
           "panel": {
             "focus": {
               "label": "Focus",
-              "value": "Lead risk screening"
+              "value": "Risk classification and separation improvement"
             },
             "outcome": {
               "label": "Outcome",
-              "value": "Better separation of risk profiles"
+              "value": "Better discrimination for exclusion and growth decisions"
             },
             "audience": {
               "label": "Audience",
-              "value": "Risk analysts, credit policy, and business stakeholders"
+              "value": "Risk stakeholders, analytics teams, and decision owners for exclusion policies"
             },
             "scope": {
               "label": "Deployment Scope",
-              "countries": [
-                "Peru"
-              ]
+              "countries": []
             }
           },
           "summary": {
@@ -263,59 +261,57 @@
             "cards": [
               {
                 "title": "Problem",
-                "body": "Lead screening needed stronger differentiation to detect over-indebted profiles earlier."
+                "body": "Risk decisions needed stronger separation between higher-risk and lower-risk leads to support sustainable growth."
               },
               {
                 "title": "Solution",
-                "body": "A supervised classification model (LightGBM) trained on socio-demographic, financial-system behavior, and internal transactional signals."
+                "body": "Trained a LightGBM classifier using AWS-hosted data sources and engineered features, validated across Train/Test and OOT periods."
               },
               {
                 "title": "Impact",
-                "body": "Improved separation between good and bad leads to 11% and achieved ~83% overall accuracy."
+                "body": "Improved separation (+11% vs. 5%) and achieved ~83% accuracy, supported by impact tests and stakeholder-ready reporting."
               },
               {
                 "title": "Users",
-                "body": "Risk and business teams using the score to support sustainable growth decisions."
+                "body": "Risk and growth stakeholders consuming model outputs, plus analytics teams maintaining the pipeline."
               }
             ]
           },
           "dashboard": {
-            "title": "Key Stakeholder Views",
-            "subtitle": "Artifacts and visuals used to communicate performance and impact.",
+            "title": "Key Model Views",
+            "subtitle": "Views used to validate performance, explain drivers, and communicate impact.",
             "views": [
               {
-                "alt": "Model performance view with ROC/AUC, Gini, confusion matrix and core metrics across train/test/OOT",
-                "title": "Performance & Stability",
+                "alt": "Model performance view with ROC curve and key metrics across Train, Test, and OOT",
+                "title": "Performance & Stability (Train/Test/OOT)",
                 "bullets": [
-                  "ROC curve and Gini to summarize discrimination power.",
-                  "Train/Test/OOT metrics to confirm generalization and stability.",
-                  "Confusion matrix to communicate trade-offs and operating point."
+                  "ROC/AUC and Gini to assess discrimination power across time splits.",
+                  "Stability checks across Development and Out-of-Time periods to reduce overfitting risk.",
+                  "Metric reporting aligned with risk objectives (e.g., recall emphasis for higher-risk class)."
                 ]
               },
               {
-                "alt": "Explainability and impact view with SHAP summary and impact testing matrices/charts",
-                "title": "Explainability & Business Impact",
+                "alt": "Explainability and impact testing view with SHAP summary and comparison matrices",
+                "title": "Explainability (SHAP) & Impact Tests",
                 "bullets": [
-                  "SHAP summary to explain key drivers and feature importance.",
-                  "Impact tests comparing the new model vs. current approach.",
-                  "Business-oriented breakdowns to support adoption decisions."
+                  "SHAP summary to explain the main drivers of the model and support stakeholder trust.",
+                  "Impact testing to compare the new model vs. the existing approach and quantify changes in classification outcomes.",
+                  "Additional slices to evaluate downstream risk behavior (e.g., delinquency / bad-rate comparisons by segment)."
                 ]
               }
             ]
           },
           "architecture": {
             "title": "Pipeline Development Flow",
-            "subtitle": "From cloud data to training, evaluation, and stakeholder-ready outputs.",
-            "alt": "Flow diagram of the model development pipeline using AWS Athena, S3, SageMaker training workers, evaluation, explainability, and reporting",
+            "subtitle": "Cost-aware ML development workflow on AWS.",
+            "alt": "Flow diagram of the ML pipeline development using Athena, S3, SageMaker, and EC2 for Train/Test/OOT datasets and modeling",
             "items": [
-              "Ingest & stage data in AWS S3 (multiple internal and external sources).",
-              "Feature building and dataset assembly via AWS Athena (SQL) over curated S3 tables.",
-              "Create a feature store-style dataset snapshot and export training-ready tables back to S3.",
-              "Spin up SageMaker training workers (compute instances) to run Python training pipelines.",
-              "Train LightGBM models, run parameter search iterations, and select the final candidate based on performance + stability.",
-              "Evaluate on Train/Test and Out-of-Time (OOT) periods; generate ROC/Gini and confusion-matrix metrics.",
-              "Compute SHAP explanations and variable importance summaries for model interpretability.",
-              "Package outputs (metrics, charts, and impact tests) into stakeholder materials and versioned artifacts."
+              "Data extraction with AWS Athena from cloud sources (query layer).",
+              "Feature engineering and dataset assembly for Train/Test/OOT; persisted to AWS S3 to avoid rebuilding and reduce compute/query costs.",
+              "Target tables (Train/Test) persisted to S3 for reproducible training and evaluation.",
+              "Modeling stages executed in AWS SageMaker (experimentation, training orchestration, evaluation, and artifact management).",
+              "Compute-intensive training/validation/OOT runs executed on AWS EC2 instances.",
+              "Model evaluation outputs (ROC/Gini, confusion matrix, impact test summaries) prepared for stakeholder communication and monitoring."
             ]
           },
           "highlights": {
@@ -323,60 +319,62 @@
             "subtitle": "Engineering choices that shaped the solution.",
             "cards": [
               {
-                "title": "Cloud-native feature pipeline",
-                "body": "Athena + S3 enabled scalable feature assembly and reproducible dataset snapshots."
+                "title": "LightGBM for large-scale binary classification",
+                "body": "Selected a tree-based boosting approach suited for high-dimensional, mixed-type features and scalable training."
               },
               {
-                "title": "Robust modeling approach",
-                "body": "LightGBM chosen for strong performance on tabular data and resilience to common data issues."
+                "title": "Reusable datasets to control cost",
+                "body": "Stored engineered datasets and targets in S3 for Train/Test/OOT to prevent expensive recomputation and repeated Athena scans."
               },
               {
-                "title": "Stability-first validation",
-                "body": "Evaluation across development, test, and OOT windows to reduce performance surprises in production."
+                "title": "Time-based validation (OOT)",
+                "body": "Validated model generalization using out-of-time periods to assess stability under temporal shifts."
               },
               {
-                "title": "Explainability with SHAP",
-                "body": "Global feature importance and driver analysis to support governance and stakeholder trust."
+                "title": "Explainability-first delivery",
+                "body": "Used SHAP-based global explanations and stakeholder-friendly reporting to support adoption and governance."
               }
             ]
           },
           "role": {
             "title": "Role & Responsibilities",
-            "subtitle": "Ownership across data, modeling, evaluation, and stakeholder communication.",
+            "subtitle": "Ownership across modeling, pipeline, evaluation, and stakeholder delivery.",
             "items": [
-              "Designed the end-to-end modeling workflow (data → features → training → validation → reporting).",
-              "Built feature engineering and dataset assembly logic on AWS (Athena/S3) and Python on SageMaker.",
-              "Trained and tuned a LightGBM classifier and validated performance on Train/Test and OOT periods.",
-              "Produced ROC/Gini and other evaluation artifacts to define operating thresholds and trade-offs.",
-              "Generated explainability outputs (SHAP summaries) to communicate model drivers.",
-              "Prepared stakeholder-ready documentation and impact-test results for decision-making and adoption."
+              "Defined the modeling objective, target definition approach, and evaluation strategy.",
+              "Designed and implemented the AWS-based pipeline (Athena → S3 feature store outputs → SageMaker/EC2 training and evaluation).",
+              "Built feature engineering workflow and persisted Train/Test/OOT datasets for reproducibility and cost efficiency.",
+              "Trained and tuned a LightGBM classifier; validated performance across Train/Test and OOT splits.",
+              "Produced explainability artifacts (SHAP) and performance reporting (ROC/AUC/Gini) for governance and communication.",
+              "Prepared impact testing materials and final stakeholder-ready summaries."
             ]
           },
           "stack": {
             "title": "Tech Stack",
-            "subtitle": "Grouped by the layers used in the workflow.",
+            "subtitle": "Grouped by the layers used in development.",
             "groups": [
               {
                 "title": "Data & Storage",
                 "items": [
-                  "AWS S3",
-                  "AWS Athena"
+                  "AWS Athena",
+                  "AWS S3"
                 ]
               },
               {
-                "title": "Modeling & Compute",
+                "title": "Model Development",
                 "items": [
                   "AWS SageMaker",
-                  "Training Workers (Compute Instances)",
-                  "Python"
+                  "AWS EC2",
+                  "Python",
+                  "LightGBM"
                 ]
               },
               {
-                "title": "ML & Explainability",
+                "title": "Explainability & Evaluation",
                 "items": [
-                  "LightGBM",
                   "SHAP",
-                  "Scikit-learn"
+                  "ROC/AUC",
+                  "Gini",
+                  "Confusion Matrix"
                 ]
               }
             ]
@@ -384,10 +382,10 @@
           "lessons": {
             "summary": "Lessons learned",
             "items": [
-              "Out-of-time evaluation is essential for risk models to validate stability beyond random splits.",
-              "Explainability accelerates stakeholder alignment and supports governance requirements.",
-              "Clear impact testing bridges the gap between model metrics and business adoption decisions.",
-              "Reproducible data snapshots (feature store-style exports) simplify iteration and auditability."
+              "Time-based validation (OOT) is essential for risk models to ensure stability beyond the development window.",
+              "Persisting engineered datasets and targets prevents unnecessary rebuilds and helps control cloud costs.",
+              "Explainability artifacts (e.g., SHAP) accelerate stakeholder alignment and governance readiness.",
+              "Impact tests bridge model metrics with business outcomes, improving adoption and decision confidence."
             ]
           }
         }

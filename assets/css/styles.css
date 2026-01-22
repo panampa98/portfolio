@@ -485,6 +485,31 @@ main {
   color: #ffd5d5;
 }
 
+.project-tags li[data-tech="AWS"] {
+  background: rgba(255, 153, 0, 0.22);
+  color: #ffe3c2;
+}
+
+.project-tags li[data-tech="Athena"] {
+  background: rgba(111, 66, 193, 0.22);
+  color: #ead9ff;
+}
+
+.project-tags li[data-tech="S3"] {
+  background: rgba(40, 167, 69, 0.22);
+  color: #d9ffe3;
+}
+
+.project-tags li[data-tech="SageMaker"] {
+  background: rgba(0, 123, 255, 0.22);
+  color: #d6e8ff;
+}
+
+.project-tags li[data-tech="Risk Modeling"] {
+  background: rgba(90, 96, 122, 0.24);
+  color: #e5e9f5;
+}
+
 .stack-section {
   margin: 60px 0 20px;
 }
